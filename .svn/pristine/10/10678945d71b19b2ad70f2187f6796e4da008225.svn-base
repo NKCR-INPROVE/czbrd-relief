@@ -1,0 +1,7 @@
+compile.on.save=true
+do.depend=false
+do.jar=true
+file.reference.ejb.jar=W:\\libJava\\plaant_2008d\\oracle10\\ejb.jar
+javac.debug=true
+javadoc.preview=true
+user.properties.file=C:\\Users\\martin.INCADSBS\\.netbeans\\7.1.2\\build.properties

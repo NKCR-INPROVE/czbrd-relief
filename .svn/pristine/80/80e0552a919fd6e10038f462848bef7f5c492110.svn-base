@@ -1,0 +1,36 @@
+/** *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cz.incad.czbrd.r3c;
+
+import cz.incad.relief3.core.dynamicLists.DynamicList_A;
+import java.util.List;
+import java.util.Locale;
+
+/** *****************************************************************************
+ *
+ * @author martin
+ */
+public class R3CDLManyEntity extends DynamicList_A {
+    public static final String F_value_STR          = "value";
+    public static final String F_cs_STR             = "cs";
+    public static final String F_en_STR             = "en";
+    public static final String F_de_STR             = "de";
+    public static final String F_fr_STR             = "fr";
+    public static final String F_note_STR           = "note";
+    public static final String F_primaryOrder_INT   = "primaryOrder";
+    public static final String F_cOrganization_STR  = "cOrganization";
+
+
+    /** ************************************************************************
+     * 
+     * @param loc
+     * @return 
+     */
+    public List getLocalizedList(Locale loc) {
+        return null;
+    }
+
+}

@@ -1,0 +1,16 @@
+/*******************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cz.incad.czbrd.dLists;
+
+import cz.incad.relief3.core.dynamicLists.DynamicListMany_A;
+
+/*******************************************************************************
+ *
+ * @author martin
+ */
+public class DLTypFonduEntity extends DynamicListMany_A {
+
+}

@@ -1,0 +1,86 @@
+annotation.processing.enabled=true
+annotation.processing.enabled.in.editor=false
+annotation.processing.processors.list=
+annotation.processing.run.all.processors=true
+annotation.processing.source.output=${build.generated.sources.dir}/ap-source-output
+application.title=R3C_CZBRD
+application.vendor=martin
+build.classes.dir=${build.dir}/classes
+build.classes.excludes=**/*.java,**/*.form
+# This directory is removed when the project is cleaned:
+build.dir=build
+build.generated.dir=${build.dir}/generated
+build.generated.sources.dir=${build.dir}/generated-sources
+# Only compile against the classpath explicitly listed here:
+build.sysclasspath=ignore
+build.test.classes.dir=${build.dir}/test/classes
+build.test.results.dir=${build.dir}/test/results
+# Uncomment to specify the preferred debugger connection transport:
+#debug.transport=dt_socket
+debug.classpath=\
+    ${run.classpath}
+debug.test.classpath=\
+    ${run.test.classpath}
+# This directory is removed when the project is cleaned:
+dist.dir=dist
+dist.jar=${dist.dir}/R3C_CZBRD.jar
+dist.javadoc.dir=${dist.dir}/javadoc
+endorsed.classpath=
+excludes=
+file.reference.activation.jar=W:\\libJava\\plaant_2008d\\activation.jar
+file.reference.common.jar=W:\\libJava\\plaant_2008d\\common.jar
+file.reference.ejb.jar=W:\\libJava\\plaant_2008d\\ejb.jar
+file.reference.plaant.jar=W:\\libJava\\plaant_2008d\\plaant.jar
+file.reference.repositoryAPI.jar=W:\\libJava\\plaant_2008d\\repositoryAPI.jar
+includes=**
+jar.compress=false
+javac.classpath=\
+    ${reference.R3C.jar}:\
+    ${file.reference.activation.jar}:\
+    ${file.reference.common.jar}:\
+    ${file.reference.ejb.jar}:\
+    ${file.reference.plaant.jar}:\
+    ${file.reference.repositoryAPI.jar}
+# Space-separated list of extra javac options
+javac.compilerargs=
+javac.deprecation=false
+javac.processorpath=\
+    ${javac.classpath}
+javac.source=1.5
+javac.target=1.5
+javac.test.classpath=\
+    ${javac.classpath}:\
+    ${build.classes.dir}:\
+    ${libs.junit.classpath}:\
+    ${libs.junit_4.classpath}
+javac.test.processorpath=\
+    ${javac.test.classpath}
+javadoc.additionalparam=
+javadoc.author=false
+javadoc.encoding=${source.encoding}
+javadoc.noindex=false
+javadoc.nonavbar=false
+javadoc.notree=false
+javadoc.private=false
+javadoc.splitindex=true
+javadoc.use=true
+javadoc.version=false
+javadoc.windowtitle=
+meta.inf.dir=${src.dir}/META-INF
+mkdist.disabled=false
+platform.active=JDK_1.6
+project.R3C=../R3C
+reference.R3C.jar=${project.R3C}/dist/R3C.jar
+run.classpath=\
+    ${javac.classpath}:\
+    ${build.classes.dir}
+# Space-separated list of JVM arguments used when running the project
+# (you may also define separate properties like run-sys-prop.name=value instead of -Dname=value
+# or test-sys-prop.name=value to set system properties for unit tests):
+run.jvmargs=
+run.test.classpath=\
+    ${javac.test.classpath}:\
+    ${build.test.classes.dir}
+source.encoding=UTF-8
+src.dir=src
+test.src.dir=test

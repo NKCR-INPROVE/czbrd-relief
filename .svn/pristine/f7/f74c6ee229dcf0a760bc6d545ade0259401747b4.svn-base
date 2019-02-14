@@ -1,0 +1,38 @@
+/* *****************************************************************************
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd.common;
+
+/**
+ *******************************************************************************
+ *
+ * @author Martin
+ */
+public class Utils {
+
+    /**
+     ***************************************************************************
+     * soukromý defaultní konstruktor
+     */
+    private Utils() {
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param value
+     * @return
+     */
+    public static boolean isValid_pH(Object value) {
+        if (value == null) {
+            return true;
+        }
+        if (value instanceof Long) {
+            return !(((Long) value).compareTo(new Long(0)) < 0 || ((Long) value).compareTo(new Long(14)) > 0);
+        }
+        return !(((Double) value).compareTo(new Double(0)) < 0 || ((Double) value).compareTo(new Double(14)) > 0);
+    }
+
+}

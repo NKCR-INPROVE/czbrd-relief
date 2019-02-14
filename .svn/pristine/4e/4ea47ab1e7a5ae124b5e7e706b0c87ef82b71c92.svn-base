@@ -1,0 +1,130 @@
+/** ****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cz.incad.czbrd.dLists;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.AnnotationKeys;
+import com.amaio.plaant.desk.QueryException;
+import com.amaio.plaant.metadata.*;
+import com.amaio.plaant.sync.Record;
+import cz.incad.czbrd.common.DBB;
+import cz.incad.czbrd.common.ReliefUser;
+import cz.incad.czbrd.r3c.R3CDLManyEntity;
+import cz.incad.relief3.core.tools.ReliefLogger;
+import java.rmi.RemoteException;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class DLTypFonduEntity extends R3CDLManyEntity {
+
+    
+    /** ************************************************************************
+     * 
+     * @param mtdt
+     * @return
+     * @throws QueryException 
+     */
+    @Override
+    public Metadata onMetadataChanged(Metadata mtdt) throws QueryException {
+        Column column_cOrganization = null;
+        Filter filter;
+        Columns columns;
+
+        super.onMetadataChanged(mtdt);
+        ReliefUser ru = new ReliefUser(getTC());
+
+        if (ru.isSystemAdmin()) {
+            //Administrátor relief - smí vidět vše
+            return mtdt;
+        }
+
+        //Přidáme security sloupec když chybí
+        columns = mtdt.getColumns();
+        if (!columns.containsColumn(F_cOrganization_STR)) {
+            column_cOrganization = DBB.createColumn(DLTypFonduEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+            }
+        }
+
+        filter = new Filter();
+        if (ru.isAppAdmin()) {
+            //Administrátor aplikace - smí vidět záznamy své organizace
+            column_cOrganization = DBB.createColumn(DLTypFonduEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+                filter.addRule(new FilterRule(Filter.AND_OP, 1, column_cOrganization, Filter.EQUAL_CRIT, ru.getOrganization(), 1, false, false));
+            }
+        } else {
+            //běžný uživatel - nemá právo vidět cokoli
+            column_cOrganization = DBB.createColumn(DLTypFonduEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+                filter.addRule(new FilterRule(Filter.AND_OP, 1, column_cOrganization, Filter.EQUAL_CRIT, "NO-PERMISSION", 1, false, false));
+            }
+        }
+        mtdt.setFilter(filter);
+
+        return mtdt;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        ReliefUser ru = new ReliefUser(getTC());
+
+        if (!(ru.isSystemAdmin() || ru.isAppAdmin())) {
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        }
+
+        super.onGetRecord(rec);
+        return rec;
+    }
+
+    /** ************************************************************************
+     * 
+     * @param rec
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        ReliefUser ru = new ReliefUser(getTC());
+
+        if (ru.getOrganization() == null || ru.getOrganization().isEmpty()) {
+            throw new AddException("Váš uživatelský účet nemá přiřazenu organizaci, což je podmínka nutná pro zakládání nových záznamů.");
+        }
+
+        if (!(ru.isSystemAdmin() || ru.isAppAdmin())) {
+            throw new AddException("Váš uživatelský účet nemá oprávnění pro zakládání nových záznamů v této agendě.");
+        }
+
+        super.onCreateLocal(rec);
+        //Nastavíme záznamu stejnou organizaci jako má uživatel
+        rec.getSimpleField(F_cOrganization_STR).setValue(ru.getOrganization());
+        return rec;
+    }
+
+    /** ************************************************************************
+     * 
+     * @return
+     * @throws RemoteException 
+     */
+    private Column createColumn() throws RemoteException {
+        Column filtrSloupec = new Column();
+        filtrSloupec.setColumnName(F_cOrganization_STR);
+        filtrSloupec.setDbField(DBB.dbb.findObject("cz.incad.czbrd.dLists.DLTypFondu").getMember(F_cOrganization_STR));
+        return filtrSloupec;
+    }
+
+}

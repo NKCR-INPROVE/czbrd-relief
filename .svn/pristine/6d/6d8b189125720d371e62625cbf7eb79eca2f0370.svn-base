@@ -1,0 +1,19 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd;
+
+import cz.incad.relief3.core.Record_A;
+
+/**
+ *
+ * @author martin.novacek@incad.cz
+ */
+public class ExemplarEntity extends Record_A {
+    public static final String F_cEvidenceMereni_COM = "cEvidenceMereni";
+    public static final String F_tEvidenceMereni_TAB = "tEvidenceMereni";
+    public static final String F_tPriloha_TAB = "tPriloha";
+    
+    
+}

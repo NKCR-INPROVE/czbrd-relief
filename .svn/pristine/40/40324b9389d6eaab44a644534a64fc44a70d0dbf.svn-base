@@ -1,0 +1,193 @@
+/* *****************************************************************************
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd.common;
+
+import cz.incad.commontools.utils.StringUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+/**
+ *******************************************************************************
+ *
+ * @author Marek
+ */
+public class OneRecord {
+    private static final Logger LOG = Logger.getLogger(OneRecord.class.getName());
+    
+    private String leader;
+    private String pole001;
+    private String pole003;
+    private String pole005;
+    private String pole007;
+    private String pole008;
+    private List<SubRecord> pole015;
+    private List<SubRecord> pole020;
+    private List<SubRecord> pole022;
+    private SubRecord pole024;
+    private SubRecord pole040;
+    private SubRecord pole080;
+    private SubRecord pole100;
+    private List<SubRecord> pole245; //názvy
+    private List<SubRecord> pole246; //variantní názvy
+    private SubRecord pole250;
+    private SubRecord pole260;
+    private SubRecord pole264;
+    private SubRecord pole300;
+    private SubRecord pole490;
+    private SubRecord pole500;
+    private SubRecord pole653;
+    private SubRecord pole790;
+    private SubRecord pole830;
+    private SubRecord pole856;
+    private SubRecord pole901;
+    private List<SubRecord> pole902;
+    private SubRecord pole910;
+    private SubRecord pole911;
+    private SubRecord pole964;
+    
+    public OneRecord() {
+        this.leader = "";
+        this.pole001 = "";
+        this.pole003 = "";
+        this.pole005 = "";
+        this.pole007 = "";
+        this.pole008 = "";
+        this.pole015 = new ArrayList<SubRecord>();
+        this.pole020 = new ArrayList<SubRecord>();
+        this.pole022 = new ArrayList<SubRecord>();
+        this.pole024 = new SubRecord();
+        this.pole040 = new SubRecord();
+        this.pole080 = new SubRecord();
+        this.pole100 = new SubRecord();
+        this.pole245 = new ArrayList<SubRecord>(); //názvy
+        this.pole246 = new ArrayList<SubRecord>(); //variantní názvy
+        this.pole250 = new SubRecord();
+        this.pole260 = new SubRecord();
+        this.pole264 = new SubRecord();
+        this.pole300 = new SubRecord();
+        this.pole490 = new SubRecord();
+        this.pole500 = new SubRecord();
+        this.pole653 = new SubRecord();
+        this.pole790 = new SubRecord();
+        this.pole830 = new SubRecord();
+        this.pole856 = new SubRecord();
+        this.pole901 = new SubRecord();
+        this.pole902 = new ArrayList<SubRecord>();
+        this.pole910 = new SubRecord();
+        this.pole911 = new SubRecord();
+        this.pole964 = new SubRecord();
+        
+    }
+    
+    public void fill(Node vstup) {
+        String tag = "";
+        NodeList nlChild = vstup.getChildNodes();
+        for (int l=0; l<nlChild.getLength(); l++) {
+            Node nChild = nlChild.item(l);
+            if ("leader".equals(nChild.getNodeName())) {
+                this.leader = nChild.getTextContent();
+            } else if ("controlfield".equals(nChild.getNodeName())) {
+                NamedNodeMap nlAttribute = nChild.getAttributes();
+                for (int k=0; k<nlAttribute.getLength(); k++) {
+                    Node nChildAttrigute = nlAttribute.item(k);
+                    if ("tag".equals(nChild.getNodeName())) {
+                        tag = Utils.vratString(nChild);
+                    }
+                }
+                if ("001".equals(tag)) {
+                    this.pole001 = Utils.vratString(nChild);
+                } else if ("003".equals(tag)) {
+                    this.pole003 = Utils.vratString(nChild);
+                } else if ("005".equals(tag)) {
+                    this.pole005 = Utils.vratString(nChild);
+                } else if ("007".equals(tag)) {
+                    this.pole007 = Utils.vratString(nChild);
+                } else if ("008".equals(tag)) {
+                    this.pole008 = Utils.vratString(nChild);
+                } else {
+                    LOG.log(Level.SEVERE, "neznámý parametr: " + tag);
+                }
+            } else if ("datafield".equals(nChild.getNodeName())) {
+            
+            }
+
+
+        }
+        if (!"".equals(tag)) {
+            
+        }
+    }
+    
+    /**
+     * pomocný objekt na uložení hodnot
+     */
+    private class SubRecord {
+        private HashMap<String, String> hodnoty;
+        
+        /**
+         * constructor
+         */
+        public SubRecord() {
+            this.hodnoty = new HashMap();
+        }
+        
+        /**
+         * nastavuje hodnotu dle klíče
+         * @param klic
+         * @param hodnota 
+         */
+        public void set(String klic, String hodnota) {
+            this.hodnoty.put(klic, hodnota);
+        }
+        
+        /**
+         * vrací hodnotu dle klíče
+         * @param klic
+         * @return 
+         */
+        public String get(String klic) {
+            return this.hodnoty.get(klic);
+        }
+        
+        /**
+         * plní hodnoty z node
+         * @param vstup (node)
+         */
+        public void fillFromNode(Node vstup) {
+            String code = "";
+            NamedNodeMap nlAttribute = vstup.getAttributes();
+            for (int l=0; l<nlAttribute.getLength(); l++) {
+                Node nChild = nlAttribute.item(l);
+                if (!"tag".equals(nChild.getNodeName())) {
+                    if (!Utils.jePrazdne(nChild.getNodeValue())) this.set(nChild.getNodeName(), nChild.getNodeValue());
+                }
+            }
+            NodeList nlChild = vstup.getChildNodes();
+            for (int l=0; l<nlChild.getLength(); l++) {
+                code = "";
+                Node nChild = nlChild.item(l);
+                NamedNodeMap nlChildAttribute = nChild.getAttributes();
+                for (int k=0; k<nlChildAttribute.getLength(); k++) {
+                    Node nChildChild = nlChildAttribute.item(k);
+                    if ("code".equals(nChildChild.getNodeName())) {
+                        code = Utils.vratString(nChildChild);
+                    }
+                }
+                if (!"".equals(code)) {
+                    if (!Utils.jePrazdne(Utils.vratString(nChild))) this.set(code, Utils.vratString(nChild));
+                }
+            }
+        }
+    }
+
+}

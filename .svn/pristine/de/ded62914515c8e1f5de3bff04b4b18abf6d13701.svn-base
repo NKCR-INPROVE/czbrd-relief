@@ -1,0 +1,213 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.AnnotationKeys;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.desk.QueryException;
+import com.amaio.plaant.metadata.*;
+import com.amaio.plaant.sync.Record;
+import cz.incad.czbrd.common.DBB;
+import cz.incad.czbrd.common.ReliefUser;
+import cz.incad.relief3.core.Record_A;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin
+ */
+public class UlozeniEntity extends Record_A implements Serializable {
+
+    private static final Logger LOG = Logger.getLogger(UlozeniEntity.class.getName());
+    public static final String F_kde_STR = "kde";
+    public static final String F_teplota_STR = "teplota";
+    public static final String F_vlhkost_STR = "vlhkost";
+    public static final String F_cOrganization_STR = "cOrganization";
+
+    /**
+     ***************************************************************************
+     *
+     * @param mtdt
+     * @return
+     * @throws QueryException
+     */
+    @Override
+    public Metadata onMetadataChanged(Metadata mtdt) throws QueryException {
+        Columns columns;
+        Column column_cOrganization;
+        Filter filter;
+
+        super.onMetadataChanged(mtdt);
+        ReliefUser ru = new ReliefUser(getTC());
+        if (ru.isSystemAdmin()) {
+            //System administrator - smí vidět všechno
+            return mtdt;
+        }
+
+        //Přidáme security sloupec když chybí
+        columns = mtdt.getColumns();
+        if (!columns.containsColumn(F_cOrganization_STR)) {
+            column_cOrganization = DBB.createColumn(UlozeniEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+            }
+        }
+
+        if (ru.isCurator()) {
+            //curator - smí vidět všechno
+            return mtdt;
+        }
+
+        filter = new Filter();
+        if (ru.isExplorer()) {
+            //průzkumník - smí vidět záznamy své organizace
+            column_cOrganization = DBB.createColumn(UlozeniEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+                filter.addRule(new FilterRule(Filter.AND_OP, 1, column_cOrganization, Filter.EQUAL_CRIT, ru.getOrganization(), 1, false, false));
+            }
+        } else {
+            //ostatní uživatelé - nesmí nic vidět
+            column_cOrganization = DBB.createColumn(UlozeniEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+                filter.addRule(new FilterRule(Filter.AND_OP, 1, column_cOrganization, Filter.EQUAL_CRIT, "NO-PERMISSION", 1, false, false));
+            }
+        }
+        mtdt.setFilter(filter);
+
+        return mtdt;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        //super.onGetRecord(rec);
+        ReliefUser ru = new ReliefUser(getTC());
+        String organizationUser;
+        String organizationRecord;
+        String userLogin;
+        String userRecord;
+
+        //Systémový administrátor je bez omezení
+        if (ru.isSystemAdmin()) {
+            return rec;
+        }
+
+        //Oprávnění pro ostatní uživatelské role
+        organizationUser = ru.getOrganization();
+        organizationRecord = (String) rec.getSimpleField(F_cOrganization_STR).getValue();
+        userLogin = ru.getLogin();
+        userRecord = (String) rec.getSimpleField(F_recCreUser_STR).getValue();
+
+        //Kontorla na to jestli záznam i organizace má přiřazenu organizaci
+        if (organizationRecord == null || organizationUser == null) {
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            LOG.log(Level.WARNING, "User/Record is securityless: " + ru.getLogin() + "/" + rec.getSimpleField(F_recID_STR).getValue());
+            return rec;
+        } else {
+            //vynulujeme hodnoty anotací
+            rec.setAnnotation(AnnotationKeys.HIDDEN_SECURITY_PROPERTY, AnnotationKeys.FALSE_VALUE);
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.FALSE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.FALSE_VALUE);
+        }
+
+        if (ru.isExplorer()) {
+            //průzkumník - smí editovat všechny záznamy své organizace
+            if (!organizationUser.equals(organizationRecord)) {
+                rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            }
+            //Průzkumník - smí mazat jen své záznamy
+            if (!userLogin.equals(userRecord)) {
+                rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            }
+
+        } else {
+            //ostatní uživatelé - nesmí nic.
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        }
+
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        //Kontrola jestli uživatel smí zkládat záznamy
+        ReliefUser ru = new ReliefUser(getTC());
+        if (ru.getOrganization() == null || ru.getOrganization().length() == 0) {
+            throw new AddException("Váš uživatelský účet nemá přiřazenu organizaci, což je podmínka nutná pro zakládání nových záznamů.");
+        }
+
+        if (!(ru.isExplorer() || ru.isSystemAdmin())) {
+            throw new AddException("Váš uživatelský účet nemá oprávnění pro zakládání nových záznamů v této agendě.");
+        }
+
+        super.onCreateLocal(rec);
+
+        //Nastavíme záznamu stejnou organizaci jako má uživatel
+        rec.getSimpleField(F_cOrganization_STR).setValue(ru.getOrganization());
+
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     * @throws ValidationException
+     */
+    @Override
+    public Record onCreate(Record rec) throws AddException, ValidationException {
+        rec = super.onCreate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws ValidationException
+     * @throws UpdateException
+     */
+    @Override
+    public Record onUpdate(Record rec) throws ValidationException, UpdateException {
+        rec = super.onUpdate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    private Record onCreateUpdate(Record rec) throws ValidationException {
+
+        return rec;
+    }
+
+}

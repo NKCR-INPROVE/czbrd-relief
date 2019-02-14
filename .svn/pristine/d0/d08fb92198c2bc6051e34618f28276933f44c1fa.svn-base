@@ -1,0 +1,122 @@
+/* *****************************************************************************
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd.common;
+
+import com.amaio.plaant.sync.Record;
+import com.amaio.plaant.sync.SimpleField;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *******************************************************************************
+ *
+ * @author Martin
+ */
+public class Utils implements Serializable {
+
+    private static final Logger LOG = Logger.getLogger(Utils.class.getName());
+
+    /**
+     ***************************************************************************
+     * soukromý defaultní konstruktor
+     */
+    private Utils() {
+    }
+
+    /**
+     ***************************************************************************
+     * Metoda kontroluje hodnotu pro PH. Povolené hodnoty jsou 0-14.
+     *
+     * @param value
+     * @return
+     */
+    public static boolean isValid_pH(Object value) {
+        if (value == null) {
+            return true;
+        }
+        if (value instanceof Integer) {
+            return !(((Integer) value) < 0 || ((Integer) value) > 14);
+        }
+        if (value instanceof Long) {
+            return !(((Long) value).compareTo(new Long(0)) < 0 || ((Long) value).compareTo(new Long(14)) > 0);
+        }
+        if (value instanceof BigDecimal) {
+            return !(((BigDecimal) value).compareTo(new BigDecimal(0)) < 0 || ((BigDecimal) value).compareTo(new BigDecimal(14)) > 0);
+        }
+        return !(((Double) value).compareTo(new Double(0)) < 0 || ((Double) value).compareTo(new Double(14)) > 0);
+    }
+
+    /**
+     ***************************************************************************
+     * Metoda kontroluje hodnotu pro Hmotnost. Povolené hodnoty jsou kladná
+     * čísla.
+     *
+     * @param value
+     * @return
+     */
+    public static boolean isValid_Hmotnost(Object value) {
+        if (value == null) {
+            return true;
+        }
+        if (value instanceof Integer) {
+            return !(((Integer) value) < 0 || ((Integer) value) > 999999);
+        }
+        if (value instanceof Long) {
+            return !(((Long) value).compareTo(new Long(0)) < 0 || ((Long) value).compareTo(new Long(999999)) > 0);
+        }
+        if (value instanceof BigDecimal) {
+            return !(((BigDecimal) value).compareTo(new BigDecimal(0)) < 0 || ((BigDecimal) value).compareTo(new BigDecimal(999999)) > 0);
+        }
+        return !(((Double) value).compareTo(new Double(0)) < 0 || ((Double) value).compareTo(new Double(999999)) > 0);
+    }
+
+    /**
+     ***************************************************************************
+     * Metoda zaokrouhlí hodnotu v poli na 2 desetiná místa. Zaokrouhlí jen
+     * BigDecimal a Double, ostatní ignoruje a nechá hodnotu bezeze změny.
+     *
+     * @param sf
+     */
+    public static void roundSimpleField(SimpleField sf) {
+        Object value = sf.getValue();
+
+        if (value == null || value instanceof Long || value instanceof Integer) {
+            LOG.log(Level.WARNING, "DEBUG - Value is null or Long or Integer");
+        } else if (value instanceof BigDecimal) {
+            LOG.log(Level.WARNING, "DEBUG - Value BigDecimal");
+            sf.setValue(BigDecimal.valueOf(Double.valueOf((Long) (Math.round((((BigDecimal) value).multiply(new BigDecimal(100))).doubleValue()))) / 100));
+        } else if (value instanceof Double) {
+            LOG.log(Level.WARNING, "DEBUG - Value Double");
+            sf.setValue((Double.valueOf((Long) (Math.round((((Double) value) * 100)))) / 100));
+        }
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param sfNeni
+     * @param rec
+     * @param values
+     */
+    public static void onePoskozeniValidation(Record rec, SimpleField sfNeni, String[] values) {
+        Object fieldValue;
+
+        for (String value : values) {
+            fieldValue = rec.getFieldValue(value);
+            if (fieldValue == null) {
+                fieldValue = Boolean.FALSE;
+            }
+            if ((Boolean) fieldValue) {
+                sfNeni.setValue(false);
+                return;
+            }
+        }
+        sfNeni.setValue(true);
+    }
+
+}

@@ -1,0 +1,72 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cz.incad.czbrd;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.sync.Record;
+import cz.incad.relief3.core.Record_A;
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+public class UlozeniEntity extends Record_A {
+    public static final String F_kde_STR     = "kde";
+    public static final String F_teplota_STR = "teplota";
+    public static final String F_vlhkost_STR = "vlhkost";
+
+
+    /** ************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record record) throws AddException {
+        record = super.onCreateLocal(record);
+        return record;
+    }
+
+    /** ************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     * @throws ValidationException
+     */
+    @Override
+    public Record onCreate(Record rec) throws AddException, ValidationException {
+        rec = super.onCreate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /** ************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws ValidationException
+     * @throws UpdateException
+     */
+    @Override
+    public Record onUpdate(Record rec) throws ValidationException, UpdateException {
+        rec = super.onUpdate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /** ************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    private Record onCreateUpdate(Record rec) throws ValidationException {
+
+        return rec;
+    }
+
+}

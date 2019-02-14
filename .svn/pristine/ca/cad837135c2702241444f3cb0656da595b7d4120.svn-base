@@ -1,0 +1,68 @@
+/*******************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cz.incad.czbrd;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.sync.Record;
+import cz.incad.relief3.core.Record_A;
+
+/*******************************************************************************
+ *
+ * @author martin
+ */
+public class UlozeniEntity extends Record_A {
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record record) throws AddException {
+        record = super.onCreateLocal(record);
+        return record;
+    }
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws AddException
+     * @throws ValidationException
+     */
+    @Override
+    public Record onCreate(Record record) throws AddException, ValidationException {
+        record = super.onCreate(record);
+        return this.onCreateUpdate(record);
+    }
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws ValidationException
+     * @throws UpdateException
+     */
+    @Override
+    public Record onUpdate(Record record) throws ValidationException, UpdateException {
+        record = super.onUpdate(record);
+        return this.onCreateUpdate(record);
+    }
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     */
+    private Record onCreateUpdate(Record record) throws ValidationException {
+
+        return record;
+    }
+
+}

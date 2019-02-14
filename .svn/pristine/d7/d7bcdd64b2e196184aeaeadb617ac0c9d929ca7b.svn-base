@@ -1,0 +1,317 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.AnnotationKeys;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.desk.QueryException;
+import com.amaio.plaant.metadata.Column;
+import com.amaio.plaant.metadata.Columns;
+import com.amaio.plaant.metadata.Metadata;
+import com.amaio.plaant.sync.Record;
+import cz.incad.czbrd.common.DBB;
+import cz.incad.czbrd.common.ReliefUser;
+import cz.incad.czbrd.dLists.SLdruhZasahuEnum;
+import cz.incad.relief3.core.Record_A;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *******************************************************************************
+ *
+ * @author martin
+ */
+public class EvidenceMereniEntity extends Record_A implements Serializable {
+
+    private static final Logger LOG = Logger.getLogger(EvidenceMereniEntity.class.getName());
+    public static final String F_druhZasahu_STR = "druhZasahu";
+    public static final String F_pObaMechChybCast_STR = "pObaMechChybCast";
+    public static final String F_pObaMechPrehPrek_STR = "pObaMechPrehPrek";
+    public static final String F_pObaMechCinHlodHmyz_STR = "pObaMechCinHlodHmyz";
+    public static final String F_pObaMechKrehkost_STR = "pObaMechKrehkost";
+    public static final String F_pObaMechLepPas_STR = "pObaMechLepPas";
+    public static final String F_pObaMechNeni_STR = "pObaMechNeni";
+    public static final String F_pObaBioHmyz_STR = "pObaBioHmyz";
+    public static final String F_pObaBioHlodavci_STR = "pObaBioHlodavci";
+    public static final String F_pObaBioPlisBak_STR = "pObaBioPlisBak";
+    public static final String F_pObaBioNeni_STR = "pObaBioNeni";
+    public static final String F_pObaChemVoda_STR = "pObaChemVoda";
+    public static final String F_pObaChemJinTek_STR = "pObaChemJinTek";
+    public static final String F_pObaChemNeni_BOO = "pObaChemNeni";
+    public static final String F_pObaChemMast_STR = "pObaChemMast";
+    public static final String F_pObaChemPrach_STR = "pObaChemPrach";
+    public static final String F_pObaChemTepPos_STR = "pObaChemTepPos";
+    public static final String F_pObaChemBarSkv_STR = "pObaChemBarSkv";
+    public static final String F_pObaChemNecTex_STR = "pObaChemNecTex";
+    public static final String F_pObaChemZdeg_STR = "pObaChemZdeg";
+    public static final String F_tEMPriloha_TAB = "tEMPriloha";
+    public static final String F_rExemplar_REF = "rExemplar";
+    public static final String F_cOrganization_STR = "cOrganization";
+    public static final String F_pMechChybCast_STR = "pMechChybCast";
+    public static final String F_pMechPrehPrek_STR = "pMechPrehPrek";
+    public static final String F_pMechSlepList_STR = "pMechSlepList";
+    public static final String F_pMechCinHlodHmyz_STR = "pMechCinHlodHmyz";
+    public static final String F_pMechKreh_STR = "pMechKreh";
+    public static final String F_pMechNeni_STR = "pMechNeni";
+    public static final String F_pMechLepPas_BOO = "pMechLepPas";
+    public static final String F_pChemVoda_STR = "pChemVoda";
+    public static final String F_pChemJinTek_STR = "pChemJinTek";
+    public static final String F_pChemMast_STR = "pChemMast";
+    public static final String F_pChemPrach_STR = "pChemPrach";
+    public static final String F_pChemTepPos_STR = "pChemTepPos";
+    public static final String F_pChemBarSkvr_STR = "pChemBarSkvr";
+    public static final String F_pChemNeni_STR = "pChemNeni";
+    public static final String F_pBioHmyz_STR = "pBioHmyz";
+    public static final String F_pBioHlodavci_STR = "pBioHlodavci";
+    public static final String F_pBioPlisBak_STR = "pBioPlisBak";
+    public static final String F_pBioZvirExk_STR = "pBioZvirExk";
+    public static final String F_pBioNeni_STR = "pBioNeni";
+    public static final String F_pPapMechChybCast_BOO = "pPapMechChybCast";
+    public static final String F_pPapMechChybCelStr_BOO = "pPapMechChybCelStr";
+    public static final String F_pPapMechChybCelStrVal_STR = "pPapMechChybCelStrVal";
+    public static final String F_pPapMechPrehPrek_BOO = "pPapMechPrehPrek";
+    public static final String F_pPapMechSlepList_BOO = "pPapMechSlepList";
+    public static final String F_pPapMechCinHlodHmyz_BOO = "pPapMechCinHlodHmyz";
+    public static final String F_pPapMechKrehkost_BOO = "pPapMechKrehkost";
+    public static final String F_pPapMechLepPas_BOO = "pPapMechLepPas";
+    public static final String F_pPapMechNeni_STR = "pPapMechNeni";
+    public static final String F_pPapBioHmyz_STR = "pPapBioHmyz";
+    public static final String F_pPapBioHlodavci_STR = "pPapBioHlodavci";
+    public static final String F_pPapBioPlisBak_STR = "pPapBioPlisBak";
+    public static final String F_pPapBioNeni_STR = "pPapBioNeni";
+    public static final String F_pPapChemVoda_STR = "pPapChemVoda";
+    public static final String F_pPapChemJinTek_STR = "pPapChemJinTek";
+    public static final String F_pPapChemMast_STR = "pPapChemMast";
+    public static final String F_pPapChemPrach_STR = "pPapChemPrach";
+    public static final String F_pPapChemTepPos_STR = "pPapChemTepPos";
+    public static final String F_pPapChemBarSkv_STR = "pPapChemBarSkv";
+    public static final String F_pPapChemNecTex_STR = "pPapChemNecTex";
+    public static final String F_pPapChemZdeg_STR = "pPapChemZdeg";
+    public static final String F_pPapChemNeni_STR = "pPapChemNeni";
+    public static final String F_posDesky_STR = "posDesky";
+    public static final String F_posHrbetnik_STR = "posHrbetnik";
+    public static final String F_posKapitalek_STR = "posKapitalek";
+    public static final String F_posZalStuzka_STR = "posZalStuzka";
+    public static final String F_posPredsadka_STR = "posPredsadka";
+    public static final String F_posVazba_STR = "posVazba";
+    public static final String F_posObalka_STR = "posObalka";
+    public static final String F_mechPosPoznamka_STR = "mechPosPoznamka";
+    public static final String F_obalKde_STR = "obalKde";
+    public static final String F_obalPH_STR = "obalPH";
+    public static final String F_obalZpusob_STR = "obalZpusob";
+    public static final String F_cEvidenceMereni_STR = "cEvidenceMereni";
+    public static final String F_bibNazev_STR = "bibNazev";
+    public static final String F_pPoznamka_STR = "pPoznamka";
+    public static final String F_bibCarKod_STR = "bibCarKod";
+    public static final String F_pPapPoznamka_STR = "pPapPoznamka";
+    public static final String F_obalkaZpusob_STR = "obalkaZpusob";
+    public static final String F_obalkaKde_STR = "obalkaKde";
+    public static final String F_obalkaPH_NUM = "obalkaPH";
+    public static final String F_kBlokZpusob_STR = "kBlokZpusob";
+    public static final String F_kBlokKde_STR = "kBlokKde";
+    public static final String F_kBlokStrana_STR = "kBlokStrana";
+    public static final String F_kBlokPH_NUM = "kBlokPH";
+    public static final String F_merPoznamky_STR = "merPoznamky";
+    public static final String F_barevnostKde_STR = "barevnostKde";
+    public static final String F_barevnostStr_STR = "barevnostStr";
+    public static final String F_tSoubor_TAB = "tSoubor";
+    //public static final String f_ = "";
+
+    /**
+     ***************************************************************************
+     *
+     * @param mtdt
+     * @return
+     * @throws QueryException
+     */
+    @Override
+    public Metadata onMetadataChanged(Metadata mtdt) throws QueryException {
+        Columns columns;
+        Column column_cOrganization;
+
+        super.onMetadataChanged(mtdt);
+        ReliefUser ru = new ReliefUser(getTC());
+        if (ru.isSystemAdmin()) {
+            //System administrator - smí vidět všechno
+            return mtdt;
+        }
+
+        //Přidáme security sloupec když chybí
+        columns = mtdt.getColumns();
+        if (!columns.containsColumn(F_cOrganization_STR)) {
+            column_cOrganization = DBB.createColumn(EvidenceMereniEntity.class.getName(), F_cOrganization_STR);
+            if (column_cOrganization != null) {
+                columns.addColumn(column_cOrganization);
+            }
+        }
+
+        return mtdt;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    @Override
+    public Record onGetRecord(Record rec) {
+        //super.onGetRecord(rec);
+        ReliefUser ru = new ReliefUser(getTC());
+        String organizationRecord;
+        String organizationUser;
+        String userLogin;
+        String userRecord;
+
+        //Systémový administrátor je bez omezení
+        if (ru.isSystemAdmin()) {
+            return rec;
+        }
+
+        //Oprávnění pro ostatní uživatelské role
+        organizationUser = ru.getOrganization();
+        organizationRecord = (String) rec.getSimpleField(F_cOrganization_STR).getValue();
+        userLogin = ru.getLogin();
+        userRecord = (String) rec.getSimpleField(F_recCreUser_STR).getValue();
+
+        //Kontorla na to jestli záznam i organizace má přiřazenu organizaci
+        if (organizationRecord == null || organizationUser == null) {
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            LOG.log(Level.WARNING, "User/Record is securityless: {0}/{1}", new Object[]{ru.getLogin(), rec.getSimpleField(F_recID_STR).getValue()});
+            return rec;
+        } else {
+            //vynulujeme hodnoty anotací
+            rec.setAnnotation(AnnotationKeys.HIDDEN_SECURITY_PROPERTY, AnnotationKeys.FALSE_VALUE);
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.FALSE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.FALSE_VALUE);
+        }
+
+        if (ru.isExplorer()) {
+            //průzkumník - smí editovat všechny záznamy své organizace
+            if (!organizationUser.equals(organizationRecord)) {
+                rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            }
+            //Kontrola jestli je uživatel korektor
+            if (!ru.isCorrector()) {
+                //Průzkumník - smí mazat jen své záznamy
+                if (!userLogin.equals(userRecord)) {
+                    rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+                }
+            }
+
+        } else {
+            //ostatní uživatelé - nesmí nic.
+            rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        }
+
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        //Kontrola jestli uživatel smí zkládat záznamy
+        ReliefUser ru = new ReliefUser(getTC());
+
+        if (ru.getOrganization() == null || ru.getOrganization().length() == 0) {
+            throw new AddException("Váš uživatelský účet nemá přiřazenu organizaci, což je podmínka nutná pro zakládání nových záznamů.");
+        }
+
+        if (!(ru.isExplorer() || ru.isSystemAdmin())) {
+            throw new AddException("Váš uživatelský účet nemá oprávnění pro zakládání nových záznamů v této agendě.");
+        }
+
+        if (rec.getReferencedField(F_rExemplar_REF).getReferencedRecord() != null) {
+            if (!ru.getOrganization().equals(rec.getReferencedField(F_rExemplar_REF).getReferencedRecord().getSimpleField(ExemplarEntity.F_cOrganization_STR).getValue())) {
+                throw new AddException("Záznam nadřízeného záznau patří jiné organizaci, nemáte oprávnění zakládat pod ním nové záznamy.");
+            }
+        }
+
+        super.onCreateLocal(rec);
+
+        //Nastavíme defaultní hodnoty
+        rec.getSimpleField(F_druhZasahu_STR).setValue(SLdruhZasahuEnum.puvodnistav.toString());
+        //Nastavíme záznamu stejnou organizaci jako má uživatel
+        rec.getSimpleField(ExemplarEntity.F_cOrganization_STR).setValue(ru.getOrganization());
+
+        return rec;
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws AddException
+     * @throws ValidationException
+     */
+    @Override
+    public Record onCreate(Record rec) throws AddException, ValidationException {
+        rec = super.onCreate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     * @throws ValidationException
+     * @throws UpdateException
+     */
+    @Override
+    public Record onUpdate(Record rec) throws ValidationException, UpdateException {
+        rec = super.onUpdate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /**
+     ***************************************************************************
+     *
+     * @param rec
+     * @return
+     */
+    private Record onCreateUpdate(Record rec) throws ValidationException {
+//        Connection conn = DirectConnection.getConnection();
+//        Statement stmt = null;
+//        ResultSet rs = null;
+
+        //Když je vybrána Obálka není, tak je hodnota nastavena na NULL
+        if ("neni".equals(rec.getSimpleField(F_posObalka_STR).getValue()) || rec.getSimpleField(F_posObalka_STR).getValue() == null) {
+            rec.getSimpleField(F_pObaMechChybCast_STR).setValue(false);
+            rec.getSimpleField(F_pObaMechPrehPrek_STR).setValue(false);
+            rec.getSimpleField(F_pObaMechCinHlodHmyz_STR).setValue(false);
+            rec.getSimpleField(F_pObaMechKrehkost_STR).setValue(false);
+            rec.getSimpleField(F_pObaMechLepPas_STR).setValue(false);
+            rec.getSimpleField(F_pObaMechNeni_STR).setValue(false);
+            rec.getSimpleField(F_pObaBioHmyz_STR).setValue(false);
+            rec.getSimpleField(F_pObaBioHlodavci_STR).setValue(false);
+            rec.getSimpleField(F_pObaBioPlisBak_STR).setValue(false);
+            rec.getSimpleField(F_pObaBioNeni_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemNeni_BOO).setValue(false);
+            rec.getSimpleField(F_pObaChemVoda_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemJinTek_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemMast_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemPrach_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemTepPos_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemBarSkv_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemNecTex_STR).setValue(false);
+            rec.getSimpleField(F_pObaChemZdeg_STR).setValue(false);
+        }
+        return rec;
+    }
+
+}

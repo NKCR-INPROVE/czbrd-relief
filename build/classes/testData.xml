@@ -1,0 +1,77 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<ill-get-doc>
+    <record xmlns="http://www.loc.gov/MARC21/slim/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+        <leader>-----nam-a22--------4500</leader>
+        <controlfield tag="001">angl01241</controlfield>
+        <controlfield tag="003">CZ-PrNK</controlfield>
+        <controlfield tag="005">20170914151902.0</controlfield>
+        <controlfield tag="007">tu</controlfield>
+        <controlfield tag="008">930610s1990----xr------------0|0-0-eng--</controlfield>
+        <datafield tag="015" ind1=" " ind2=" ">
+            <subfield code="a">cnb000199131</subfield>
+        </datafield>
+        <datafield tag="020" ind1=" " ind2=" ">
+            <subfield code="a">80-85241-00-5</subfield>
+            <subfield code="q">(brož.)</subfield>
+        </datafield>
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">ABA001</subfield>
+            <subfield code="b">cze</subfield>
+            <subfield code="d">ABA001</subfield>
+        </datafield>
+        <datafield tag="080" ind1=" " ind2=" ">
+            <subfield code="a">111.8</subfield>
+            <subfield code="2">undef</subfield>
+        </datafield>
+        <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">MacRae, Robert G.</subfield>
+            <subfield code="4">aut</subfield>
+        </datafield>
+        <datafield tag="245" ind1="1" ind2="4">
+            <subfield code="a">The matter with truth /</subfield>
+            <subfield code="c">Robert G. MacRae</subfield>
+        </datafield>
+        <datafield tag="250" ind1=" " ind2=" ">
+            <subfield code="a">1st ed.</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="a">Prague :</subfield>
+            <subfield code="b">Inst. for Central European Culture and Politics,</subfield>
+            <subfield code="c">1990</subfield>
+        </datafield>
+        <datafield tag="300" ind1=" " ind2=" ">
+            <subfield code="a">104 s. ;</subfield>
+            <subfield code="c">21 cm</subfield>
+        </datafield>
+        <datafield tag="490" ind1="1" ind2=" ">
+            <subfield code="a">Oikúmené ;</subfield>
+            <subfield code="v">Sv. 13</subfield>
+        </datafield>
+        <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Na tit. l. uvedeno nesprávně: M.G. McRae</subfield>
+        </datafield>
+        <datafield tag="653" ind1="0" ind2=" ">
+            <subfield code="a">Pravda</subfield>
+        </datafield>
+        <datafield tag="830" ind1=" " ind2="0">
+            <subfield code="a">Oikúmené (ISE)</subfield>
+            <subfield code="0">s</subfield>
+        </datafield>
+        <datafield tag="856" ind1="4" ind2="1">
+            <subfield code="u">http://kramerius4.nkp.cz/search/handle/uuid:dc8e2c00-8a5e-11e2-8593-005056827e52</subfield>
+            <subfield code="y">Digitalizovaný dokument</subfield>
+        </datafield>
+        <datafield tag="901" ind1=" " ind2=" ">
+            <subfield code="g">ISBN není uvedeno na rubu titulního listu</subfield>
+            <subfield code="o">19981103</subfield>
+        </datafield>
+        <datafield tag="910" ind1="1" ind2=" ">
+            <subfield code="a">ABA001</subfield>
+        </datafield>
+        <datafield tag="964" ind1=" " ind2=" ">
+            <subfield code="a">Pravda - úvahy filozofické</subfield>
+        </datafield>
+    </record>
+    <session-id>RDC4XIKCRP5DN8MA1PRQN8SK2P23SDH425A341F8T6AYB2P97T</session-id>
+</ill-get-doc>
+ 

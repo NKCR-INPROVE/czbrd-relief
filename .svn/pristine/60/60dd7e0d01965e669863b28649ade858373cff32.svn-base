@@ -1,0 +1,151 @@
+/* *****************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.incad.czbrd.system.bf;
+
+import com.amaio.plaant.businessFunctions.*;
+import com.amaio.plaant.sync.Record;
+import cz.incad.czbrd.common.ReliefUser;
+import cz.incad.czbrd.system.UsersAdministrationEntity;
+import cz.incad.relief3.core.BussinesFunction_A;
+import cz.incad.relief3.core.tools.Exceptions;
+import java.util.LinkedList;
+import java.util.List;
+
+/** ****************************************************************************
+ *
+ * @author martin.novacek@incad.cz
+ */
+public class UsersAdministration_copyUserSettings extends BussinesFunction_A {
+
+    public static final String f_masterLoginName = "masterLoginName";
+    public static final String panel_01 = "panel01";
+    public static final String panel_02 = "panel02";
+    private Object masterLoginName;
+    private List<UserDescription> lAllUsers = new LinkedList<UserDescription>();
+
+    /***************************************************************************
+     *
+     * @return
+     * @throws ValidationException
+     * @throws WizardException
+     */
+    public WizardMessage startWizard() throws ValidationException, WizardException {
+        WizardMessage wm = new WizardMessage();
+        RecordsIterator ritSelected;
+        Record recUser;
+        ValidationException vex = Exceptions.getValidationException(getWCC());
+        ReliefUser ru = new ReliefUser(getWCC());
+
+        if (!(ru.isAppAdmin() || ru.isSystemAdmin())) {
+            throw new WizardException("Nemáte oprávnění pro spuštění této funkce");
+        }
+
+        ritSelected = getWCC().getSelectedRecords();
+        if (ritSelected.getRecordsCount() == 0) {
+            throw new WizardException("Pro tuto funkci musí být vybrán alespoň jeden záznam.");
+        }
+
+        recUser = ritSelected.nextRecord();
+        if (!ReliefUser.isUserAllowedChangeOtherUser(ru, recUser)) {
+            throw new WizardException("Nemáte právo měnit záznam uživatele vyšší nebo stejné úrovně.");
+        }
+
+        while (ritSelected.hasMoreRecords()) {
+            recUser = ritSelected.nextRecord();
+            //Kontrola jestli má daný uživatel právo měnit nastavení vybraných uživatelů.
+            if (ReliefUser.isUserAllowedChangeOtherUser(ru, recUser)) {
+                lAllUsers.add(new UserDescription((String)recUser.getSimpleField(UsersAdministrationEntity.F_login_STR).getValue(), recUser.getSimpleField(UsersAdministrationEntity.F_surname_STR).getValue() + " " + recUser.getSimpleField(UsersAdministrationEntity.F_name_STR).getValue()));
+            } else {
+                vex.addField((String)recUser.getSimpleField(UsersAdministrationEntity.F_login_STR).getValue(), "Nemáte právo měnit záznam uživatele vyšší nebo stejné úrovně.", false);
+            }
+        }
+
+        if (vex.isGravid()) throw vex;
+
+        //připravíme hodnoty do dynamického listu.
+        //getWCC().getWizardRecord().getField(f_masterLoginName).setAnnotation(AnnotationKeys.LIST_SOURCE_CUSTOM_PROPERTY, new DynamicList_ReliefUser());
+
+        return wm;
+    }
+
+    /***************************************************************************
+     *
+     * @param string
+     * @return
+     * @throws ValidationException
+     * @throws WizardException
+     */
+    public WizardMessage panelLeave(String panelName) throws ValidationException, WizardException {
+        WizardMessage wm = new WizardMessage();
+        ValidationException vex = Exceptions.getValidationException(getWCC());
+        String temp = null;
+
+        if (panelName.equals(panel_01)) {
+            this.masterLoginName = getWCC().getWizardRecord().getSimpleField(f_masterLoginName).getValue();
+            if (this.masterLoginName == null) {
+                vex.addField("Uživatel", "Pole nesmí být prázdné.", false);
+                throw vex;
+            }
+
+            //kontrolujeme zdali se uživatel nepokouší měnit nastavení zdrojového uživatele
+            wm.addLine("Zdrojový uživatel: " + this.masterLoginName);
+            wm.addLine("");
+            wm.addLine("Seznam uživatelů, kterým bude zmněněno nastavení GUI:");
+            for (int i = 0; i < lAllUsers.size(); i++) {
+                if (this.masterLoginName.equals(lAllUsers.get(i).login)) {
+                    lAllUsers.remove(i);
+                    i--;
+                    temp = "Uživatel " + this.masterLoginName + " byl odebrán ze seznamu uživatelů, kterým budou změněna nastavení, jelikož se jedná o uživatele ze kterého se budou nastavení kopírovat.";
+                    continue;
+                }
+                wm.addLine(lAllUsers.get(i).nacionale);
+            }
+
+            if (temp != null) {
+                wm.addLine("");
+                wm.addLine(temp);
+            }
+
+        } else if (panelName.equals(panel_02)) {
+        } else {
+            throw new WizardException("Nepodporovaný panel funkce, kontaktujte dodavatele software.");
+        }
+        return wm;
+    }
+
+    /***************************************************************************
+     *
+     * @return
+     * @throws ValidationException
+     * @throws WizardException
+     * @throws ApplicationErrorException
+     */
+    public WizardMessage runBusinessMethod() throws ValidationException, WizardException, ApplicationErrorException {
+        WizardMessage wm = new WizardMessage();
+        wm.addLine("Počet zpracovaných uživatelů: " + lAllUsers.size());
+        for (int i = 0; i < lAllUsers.size(); i++) {
+            ReliefUser.copyUserProperties((String)this.masterLoginName, lAllUsers.get(i).login);
+        }
+
+        wm.addLine("Kopírování nastavení GUI dokončeno.");
+        return wm;
+    }
+
+}
+
+/** ****************************************************************************
+ *
+ * @author martin
+ */
+class UserDescription {
+    public final String login;
+    public final String nacionale;
+
+    public UserDescription(String login, String nacionale) {
+        this.login = login;
+        this.nacionale = nacionale;
+    }
+
+}

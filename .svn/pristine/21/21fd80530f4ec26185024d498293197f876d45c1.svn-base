@@ -1,0 +1,95 @@
+/*******************************************************************************
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cz.incad.czbrd;
+
+import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.UpdateException;
+import com.amaio.plaant.businessFunctions.ValidationException;
+import com.amaio.plaant.sync.BinaryValue;
+import com.amaio.plaant.sync.Record;
+import cz.incad.relief3.core.Record_A;
+import cz.incad.relief3.core.tools.Utilities;
+
+/*******************************************************************************
+ *
+ * @author martin
+ */
+public class SouborEntity extends Record_A {
+    public static final String f_fileBinary = "file";
+    public static final String f_fileName = "fileName";
+    public static final String f_fileSize = "fileSize";
+    public static final String f_fileMimetype = "fileMimetype";
+    public static final String f_note = "note";
+
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws AddException
+     */
+    @Override
+    public Record onCreateLocal(Record rec) throws AddException {
+        rec = super.onCreateLocal(rec);
+        return rec;
+    }
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws AddException
+     * @throws ValidationException
+     */
+    @Override
+    public Record onCreate(Record rec) throws AddException, ValidationException {
+        rec = super.onCreate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     * @throws ValidationException
+     * @throws UpdateException
+     */
+    @Override
+    public Record onUpdate(Record rec) throws ValidationException, UpdateException {
+        rec = super.onUpdate(rec);
+        return this.onCreateUpdate(rec);
+    }
+
+    /***************************************************************************
+     *
+     * @param record
+     * @return
+     */
+    private Record onCreateUpdate(Record rec) throws ValidationException {
+        //Zpracovani souboru
+        BinaryValue bindata = (BinaryValue)rec.getBinaryField(SouborEntity.f_fileBinary).getValue();
+        if (!Utilities.isBinDataDeleted(bindata)) {
+            rec.getSimpleField(SouborEntity.f_fileName).setValue(bindata.getName());
+            rec.getSimpleField(SouborEntity.f_fileSize).setValue(Integer.parseInt(Utilities.bytes2Kilobytes(bindata.getSize())));
+            rec.getSimpleField(SouborEntity.f_fileMimetype).setValue(bindata.getMimeType().getBaseType());
+//            if (bindata instanceof ImageBinaryValue) {
+//                int x = ((ImageBinaryValue)bindata).getImageWidth();
+//                int y = ((ImageBinaryValue)bindata).getImageHeight();
+//                rec.getSimpleField("rozmer").setValue(x + "x" + y);
+//            }
+//            else {
+//                rec.getSimpleField("rozmer").setValue(null);
+//            }
+        } else {
+            rec.getSimpleField(SouborEntity.f_fileName).setValue(null);
+            rec.getSimpleField(SouborEntity.f_fileSize).setValue(null);
+            rec.getSimpleField(SouborEntity.f_fileMimetype).setValue(null);
+            //rec.getSimpleField("rozmer").setValue(null);
+        }
+        return rec;
+    }
+
+}

@@ -1,0 +1,11 @@
+compile.on.save=true
+do.depend=false
+do.jar=true
+file.reference.activation.jar=C:\\WorkShop\\libJava\\plaant_2008d\\oracle10\\activation.jar
+file.reference.common.jar=C:\\WorkShop\\libJava\\plaant_2008d\\common.jar
+file.reference.ejb.jar=C:\\WorkShop\\libJava\\plaant_2008d\\oracle10\\ejb.jar
+file.reference.plaant.jar=C:\\WorkShop\\libJava\\plaant_2008d\\plaant.jar
+file.reference.repositoryAPI.jar=C:\\WorkShop\\libJava\\plaant_2008d\\repositoryAPI.jar
+javac.debug=true
+javadoc.preview=true
+user.properties.file=C:\\Users\\martin.INCADSBS\\AppData\\Roaming\\NetBeans\\8.1\\build.properties

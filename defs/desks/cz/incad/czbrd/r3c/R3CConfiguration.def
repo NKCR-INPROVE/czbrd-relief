@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd.r3c</deskPackage>
+  <deskName>R3CConfiguration</deskName>
+  <deskHumanHelp>R3CConfiguration_help</deskHumanHelp>
+  <deskHumanName>R3CConfiguration</deskHumanName>
+  <deskDBName>R3CConfiguration</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.r3c.R3CConfiguration</machineModel>
+  <fields>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>R3CConfiguration.value</fieldHumanName>
+      <fieldHumanHelp>R3CConfiguration.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>512</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>name</fieldName>
+      <fieldHumanName>R3CConfiguration.name</fieldHumanName>
+      <fieldHumanHelp>R3CConfiguration.name_help</fieldHumanHelp>
+      <fieldDBName>name</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>256</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>note</fieldName>
+      <fieldHumanName>R3CConfiguration.note</fieldHumanName>
+      <fieldHumanHelp>R3CConfiguration.note_help</fieldHumanHelp>
+      <fieldDBName>note</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="formDefault" formHumanName="R3CConfiguration.formDefault" id="cz.incad.czbrd.r3c.R3CConfiguration">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="name" precision="0" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="value" precision="0" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+          <input align="LEFT" valign="TOP" indent="false" width="106ch" id="note" precision="0" scale="0" type="longtext" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="formDefault"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd.system</deskPackage>
+  <deskName>UsersAdministration</deskName>
+  <deskHumanHelp>UsersAdministration_help</deskHumanHelp>
+  <deskHumanName>UsersAdministration</deskHumanName>
+  <deskDBName>UsersAdministration</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.system.UsersAdministration</machineModel>
+  <fields>
+    <field>
+      <fieldName>isActive</fieldName>
+      <fieldHumanName>UsersAdministration.isActive</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isActive_help</fieldHumanHelp>
+      <fieldDBName>isActive</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recID</fieldName>
+      <fieldHumanName>EvidenceMereni.recID</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recID_help</fieldHumanHelp>
+      <fieldDBName>recID</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>16</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>email</fieldName>
+      <fieldHumanName>UsersAdministration.email</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.email_help</fieldHumanHelp>
+      <fieldDBName>email</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiUser</fieldName>
+      <fieldHumanName>EvidenceMereni.recEdiUser</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recEdiUser_help</fieldHumanHelp>
+      <fieldDBName>recEdiUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiDate</fieldName>
+      <fieldHumanName>EvidenceMereni.recEdiDate</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recEdiDate_help</fieldHumanHelp>
+      <fieldDBName>recEdiDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>name</fieldName>
+      <fieldHumanName>UsersAdministration.name</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.name_help</fieldHumanHelp>
+      <fieldDBName>name</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isCorrector</fieldName>
+      <fieldHumanName>UsersAdministration.isCorrector</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isCorrector_help</fieldHumanHelp>
+      <fieldDBName>isCorrector</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>login</fieldName>
+      <fieldHumanName>UsersAdministration.login</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.login_help</fieldHumanHelp>
+      <fieldDBName>login</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isAppAdmin</fieldName>
+      <fieldHumanName>UsersAdministration.isAppAdmin</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isAppAdmin_help</fieldHumanHelp>
+      <fieldDBName>isAppAdmin</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cOrganization</fieldName>
+      <fieldHumanName>UsersAdministration.cOrganization</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.cOrganization_help</fieldHumanHelp>
+      <fieldDBName>cOrganization</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Organization</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>note</fieldName>
+      <fieldHumanName>UsersAdministration.note</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.note_help</fieldHumanHelp>
+      <fieldDBName>note</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>surname</fieldName>
+      <fieldHumanName>UsersAdministration.surname</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.surname_help</fieldHumanHelp>
+      <fieldDBName>surname</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isExplorer</fieldName>
+      <fieldHumanName>UsersAdministration.isExplorer</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isExplorer_help</fieldHumanHelp>
+      <fieldDBName>isExplorer</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isCurator</fieldName>
+      <fieldHumanName>UsersAdministration.isCurator</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isCurator_help</fieldHumanHelp>
+      <fieldDBName>isCurator</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isSystemAdmin</fieldName>
+      <fieldHumanName>UsersAdministration.isSystemAdmin</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isSystemAdmin_help</fieldHumanHelp>
+      <fieldDBName>isSystemAdmin</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreDate</fieldName>
+      <fieldHumanName>EvidenceMereni.recCreDate</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recCreDate_help</fieldHumanHelp>
+      <fieldDBName>recCreDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreUser</fieldName>
+      <fieldHumanName>EvidenceMereni.recCreUser</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recCreUser_help</fieldHumanHelp>
+      <fieldDBName>recCreUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="UserAdministration.FormDefault" formHumanName="UserAdministration.FormDefault" id="cz.incad.czbrd.system.UsersAdministration">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="32ch" id="login" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <select align="LEFT" valign="TOP" indent="false" columnIndex="2" id="cOrganization" precision="19" scale="4" type="combo" multi="false" editable="false">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </select>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="32ch" id="name" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="32ch" id="surname" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="64ch" id="email" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <check align="LEFT" valign="TOP" indent="false" id="isActive" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+          <check align="LEFT" valign="TOP" indent="false" id="isSystemAdmin" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" id="isAppAdmin" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" id="isCurator" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" id="isCorrector" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" id="isExplorer" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="note" precision="0" scale="0" type="text" rows="3">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="recID" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="recCreUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="recCreDate" precision="0" scale="0" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="20ch" id="recEdiUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="20ch" id="recEdiDate" precision="0" scale="0" formatPattern="dd.MM.yyyy" formatPatternForInput="dd.MM.yyyy" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="UserAdministration.FormDefault"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin</functionName>
+      <functionHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin</functionHumanName>
+      <functionHumanHelp>UsersAdministration_cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin.panel01</panelHumanName>
+          <description>cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>password</fieldName>
+              <fieldHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin.panel01.password</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword</functionName>
+      <functionHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword</functionHumanName>
+      <functionHumanHelp>UsersAdministration_cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword.panel01</panelHumanName>
+          <description>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>password</fieldName>
+              <fieldHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword.panel01.password</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword.panel02</panelHumanName>
+          <description>cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword.panel02_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings</functionName>
+      <functionHumanName>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings</functionHumanName>
+      <functionHumanHelp>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings.panel01</panelHumanName>
+          <description>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>masterLoginName</fieldName>
+              <fieldHumanName>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings.panel01.masterLoginName</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>SL123</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>panel02</panelName>
+          <panelHumanName>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings.panel02</panelHumanName>
+          <description>cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings.panel02_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.system.bf.UsersAdministration_ActiveDeactiveUser</functionName>
+      <functionHumanName>cz.incad.czbrd.system.bf.UsersAdministration_ActiveDeactiveUser</functionHumanName>
+      <functionHumanHelp>UsersAdministration_cz.incad.czbrd.system.bf.UsersAdministration_ActiveDeactiveUser_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.czbrd.system.bf.UsersAdministration_ActiveDeactiveUser.panel01</panelHumanName>
+          <description>cz.incad.czbrd.system.bf.UsersAdministration_ActiveDeactiveUser.panel01_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.czbrd.system.bf.UsersAdministration_setReliefAdmin"/>
+      <node functionName="cz.incad.czbrd.system.bf.UsersAdministration_setUserPassword"/>
+      <node functionName="cz.incad.czbrd.system.bf.UsersAdministration_copyUserSettings"/>
+      <node functionName="cz.incad.czbrd.system.bf.UsersAdministration_ActiveDeactiveUser"/>
+    </tree>
+  </functions>
+  <uniqueFields/>
+</desk>

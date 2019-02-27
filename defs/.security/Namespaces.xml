@@ -1,0 +1,56 @@
+<linked-hash-map>
+  <entry>
+    <string>security</string>
+    <com.amaio.active.impl.EntityImpl>
+      <id>com.amaio.repository.security</id>
+      <name>security</name>
+      <descr></descr>
+      <annotations class="linked-hash-map"/>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+  <entry>
+    <string>DefaultRole</string>
+    <com.amaio.active.impl.EntityImpl>
+      <id>com.amaio.security.DefaultRole</id>
+      <name>DefaultRole</name>
+      <descr></descr>
+      <annotations class="linked-hash-map"/>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+  <entry>
+    <string>IsAdmin</string>
+    <com.amaio.active.impl.EntityImpl>
+      <id>com.amaio.security.IsAdmin</id>
+      <name>IsAdmin</name>
+      <descr></descr>
+      <annotations class="linked-hash-map"/>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+  <entry>
+    <string>IsRoleOrUserEnabled</string>
+    <com.amaio.active.impl.EntityImpl>
+      <id>com.amaio.security.IsEnabled</id>
+      <name>IsRoleOrUserEnabled</name>
+      <descr></descr>
+      <annotations class="linked-hash-map"/>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+  <entry>
+    <string>UserPassword</string>
+    <com.amaio.active.impl.EntityImpl>
+      <id>com.amaio.security.Password</id>
+      <name>UserPassword</name>
+      <descr></descr>
+      <annotations class="linked-hash-map"/>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+  <entry>
+    <string>UserProperties</string>
+    <com.amaio.active.impl.EntityImpl>
+      <id>com.amaio.security.Properties</id>
+      <name>UserProperties</name>
+      <descr></descr>
+      <annotations class="linked-hash-map"/>
+    </com.amaio.active.impl.EntityImpl>
+  </entry>
+</linked-hash-map>

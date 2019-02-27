@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd</deskPackage>
+  <deskName>Ulozeni</deskName>
+  <deskHumanHelp>Ulozeni_help</deskHumanHelp>
+  <deskHumanName>Ulozeni</deskHumanName>
+  <deskDBName>Ulozeni</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.Ulozeni</machineModel>
+  <fields>
+    <field>
+      <fieldName>recID</fieldName>
+      <fieldHumanName>Ulozeni.recID</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.recID_help</fieldHumanHelp>
+      <fieldDBName>recID</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>16</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiUser</fieldName>
+      <fieldHumanName>Ulozeni.recEdiUser</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.recEdiUser_help</fieldHumanHelp>
+      <fieldDBName>recEdiUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiDate</fieldName>
+      <fieldHumanName>Ulozeni.recEdiDate</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.recEdiDate_help</fieldHumanHelp>
+      <fieldDBName>recEdiDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kde</fieldName>
+      <fieldHumanName>Ulozeni.kde</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.kde_help</fieldHumanHelp>
+      <fieldDBName>kde</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cOrganization</fieldName>
+      <fieldHumanName>Ulozeni.cOrganization</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.cOrganization_help</fieldHumanHelp>
+      <fieldDBName>cOrganization</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Organization</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>teplota</fieldName>
+      <fieldHumanName>Ulozeni.teplota</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.teplota_help</fieldHumanHelp>
+      <fieldDBName>teplota</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vlhkost</fieldName>
+      <fieldHumanName>Ulozeni.vlhkost</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.vlhkost_help</fieldHumanHelp>
+      <fieldDBName>vlhkost</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreDate</fieldName>
+      <fieldHumanName>Ulozeni.recCreDate</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.recCreDate_help</fieldHumanHelp>
+      <fieldDBName>recCreDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreUser</fieldName>
+      <fieldHumanName>Ulozeni.recCreUser</fieldHumanName>
+      <fieldHumanHelp>Ulozeni.recCreUser_help</fieldHumanHelp>
+      <fieldDBName>recCreUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="formDefault" formHumanName="Ulozeni.Forms.formDefault" id="cz.incad.czbrd.Ulozeni">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="40ch" id="kde" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="teplota" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="10ch" id="vlhkost" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="formDefault"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

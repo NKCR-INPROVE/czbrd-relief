@@ -1,0 +1,31 @@
+<list bundle="ServerBundle" projectId="data">
+	<desks>
+		<desk deskName="cz.incad.czbrd.r3c.R3CDLMany"></desk>
+		<desk deskName="cz.incad.czbrd.r3c.R3CConfiguration"></desk>
+		<desk deskName="cz.incad.czbrd.dLists.DLKde"></desk>
+		<desk deskName="cz.incad.czbrd.dLists.DLTypFondu"></desk>
+		<desk deskName="cz.incad.czbrd.EvidenceMereni"></desk>
+		<desk deskName="cz.incad.czbrd.EvidenceMereniPriloha"></desk>
+		<desk deskName="cz.incad.czbrd.Exemplar"></desk>
+		<desk deskName="cz.incad.czbrd.Priloha"></desk>
+		<desk deskName="cz.incad.czbrd.Soubor"></desk>
+		<desk deskName="cz.incad.czbrd.Ulozeni"></desk>
+		<desk deskName="cz.incad.czbrd.Zasahy"></desk>
+		<desk deskName="cz.incad.czbrd.system.Organization"></desk>
+		<desk deskName="cz.incad.czbrd.system.UsersAdministration"></desk>
+	</desks>
+	<tree humanName="ApplName">
+		<node humanName="Admin">
+			<node deskName="cz.incad.czbrd.r3c.R3CConfiguration"></node>
+			<node deskName="cz.incad.czbrd.system.UsersAdministration"></node>
+			<node deskName="cz.incad.czbrd.system.Organization"></node>
+		</node>
+		<node humanName="menu.application">
+			<node humanName="menu.application.dLists">
+				<node deskName="cz.incad.czbrd.dLists.DLKde"></node>
+			</node>
+			<node deskName="cz.incad.czbrd.Exemplar"></node>
+			<node deskName="cz.incad.czbrd.Ulozeni"></node>
+		</node>
+	</tree>
+</list>

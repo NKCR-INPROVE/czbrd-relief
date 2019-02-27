@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<packages>
+  <package>cz.incad.czbrd.r3c</package>
+  <package>cz.incad.czbrd.dLists</package>
+  <package>cz.incad.czbrd</package>
+  <package>cz.incad.czbrd.system</package>
+</packages>

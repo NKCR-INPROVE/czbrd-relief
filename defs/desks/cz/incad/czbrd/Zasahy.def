@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd</deskPackage>
+  <deskName>Zasahy</deskName>
+  <deskHumanHelp>Zasahy_help</deskHumanHelp>
+  <deskHumanName>Zasahy</deskHumanName>
+  <deskDBName>Zasahy</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.Zasahy</machineModel>
+  <fields>
+    <field>
+      <fieldName>chemCisteni</fieldName>
+      <fieldHumanName>Zasahy.chemCisteni</fieldHumanName>
+      <fieldHumanHelp>Zasahy.chemCisteni_help</fieldHumanHelp>
+      <fieldDBName>chemCisteni</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>dezinfekce</fieldName>
+      <fieldHumanName>Zasahy.dezinfekce</fieldHumanName>
+      <fieldHumanHelp>Zasahy.dezinfekce_help</fieldHumanHelp>
+      <fieldDBName>dezinfekce</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>jine</fieldName>
+      <fieldHumanName>Zasahy.jine</fieldHumanName>
+      <fieldHumanHelp>Zasahy.jine_help</fieldHumanHelp>
+      <fieldDBName>jine</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>kontPruzkum</fieldName>
+      <fieldHumanName>Zasahy.kontPruzkum</fieldHumanName>
+      <fieldHumanHelp>Zasahy.kontPruzkum_help</fieldHumanHelp>
+      <fieldDBName>kontPruzkum</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>konzervace</fieldName>
+      <fieldHumanName>Zasahy.konzervace</fieldHumanName>
+      <fieldHumanHelp>Zasahy.konzervace_help</fieldHumanHelp>
+      <fieldDBName>konzervace</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>mechCisteni</fieldName>
+      <fieldHumanName>Zasahy.mechCisteni</fieldHumanName>
+      <fieldHumanHelp>Zasahy.mechCisteni_help</fieldHumanHelp>
+      <fieldDBName>mechCisteni</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>odkyselovani</fieldName>
+      <fieldHumanName>Zasahy.odkyselovani</fieldHumanName>
+      <fieldHumanHelp>Zasahy.odkyselovani_help</fieldHumanHelp>
+      <fieldDBName>odkyselovani</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>poZivKat</fieldName>
+      <fieldHumanName>Zasahy.poZivKat</fieldHumanName>
+      <fieldHumanHelp>Zasahy.poZivKat_help</fieldHumanHelp>
+      <fieldDBName>poZivKat</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>restaurovani</fieldName>
+      <fieldHumanName>Zasahy.restaurovani</fieldHumanName>
+      <fieldHumanHelp>Zasahy.restaurovani_help</fieldHumanHelp>
+      <fieldDBName>restaurovani</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>univerzalniPrevazba</fieldName>
+      <fieldHumanName>Zasahy.univerzalniPrevazba</fieldHumanName>
+      <fieldHumanHelp>Zasahy.univerzalniPrevazba_help</fieldHumanHelp>
+      <fieldDBName>uniPrev</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>historizujiciPrevazba</fieldName>
+      <fieldHumanName>Zasahy.historizujiciPrevazba</fieldHumanName>
+      <fieldHumanHelp>Zasahy.historizujiciPrevazba_help</fieldHumanHelp>
+      <fieldDBName>hisPrev</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="ZasahyF" formHumanName="ZasahyF" id="cz.incad.czbrd.Zasahy">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <label align="LEFT" valign="TOP" indent="false">pocetZasahu</label>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="odkyselovani" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="restaurovani" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="konzervace" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="historizujiciPrevazba" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="univerzalniPrevazba" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="mechCisteni" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="chemCisteni" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="dezinfekce" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="kontPruzkum" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="poZivKat" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" width="2ch" id="jine" precision="19" scale="0" type="text">
+            <label place="LEFT">
+              <from-field colon="false"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="ZasahyF"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

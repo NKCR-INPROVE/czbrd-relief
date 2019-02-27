@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lists>
+  <list name="SL123" bundle="ServerBundle" alphabetize="false">
+    <item key="x01">SL123.1</item>
+    <item key="x02">SL123.2</item>
+    <item key="x03">SL123.3</item>
+  </list>
+  <list name="SL12345" bundle="ServerBundle" alphabetize="false">
+    <item key="x01">SL12345.1</item>
+    <item key="x02">SL12345.2</item>
+    <item key="x03">SL12345.3</item>
+    <item key="x04">SL12345.4</item>
+    <item key="x05">SL12345.5</item>
+  </list>
+  <list name="SLTypVazby" bundle="ServerBundle" alphabetize="false">
+    <item key="pevna">SLTypVazby.pevna</item>
+    <item key="polotuha">SLTypVazby.polotuha</item>
+    <item key="brozovana">SLTypVazby.brozovana</item>
+    <item key="brozura">SLTypVazby.brozura</item>
+    <item key="krouzkovavazbakovova">SLTypVazby.krouzkovavazbakovova</item>
+    <item key="krouzkovavazbaplastova">SLTypVazby.krouzkovavazbaplastova</item>
+    <item key="kniharskesrouby">SLTypVazby.kniharskesrouby</item>
+    <item key="leporelo">SLTypVazby.leporelo</item>
+    <item key="deskyskapsou">SLTypVazby.deskyskapsou</item>
+    <item key="zzzjina">SLTypVazby.jina</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLDruhVazby" bundle="ServerBundle" alphabetize="false">
+    <item key="celopapirova">SLDruhVazby.celopapirova</item>
+    <item key="celoplatena">SLDruhVazby.celoplatena</item>
+    <item key="celokozena">SLDruhVazby.celokozena</item>
+    <item key="poloplatena">SLDruhVazby.poloplatena</item>
+    <item key="polokozena">SLDruhVazby.polokozena</item>
+    <item key="plast">SLDruhVazby.plast</item>
+    <item key="laminace">SLDruhVazby.laminace</item>
+    <item key="lak">SLDruhVazby.lak</item>
+    <item key="satenova">SLDruhVazby.satenova</item>
+    <item key="zzzjiny">SLDruhVazby.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLOchrannyObal" bundle="ServerBundle" alphabetize="false">
+    <item key="krabice">SLOchrannyObal.krabice</item>
+    <item key="desky">SLOchrannyObal.desky</item>
+    <item key="obalka">SLOchrannyObal.obalka</item>
+    <item key="druhotnaLaminace">SLOchrannyObal.druhotnaLaminace</item>
+    <item key="plastovyPrebal">SLOchrannyObal.plastovyPrebal</item>
+    <item key="tubus">SLOchrannyObal.tubus</item>
+    <item key="neni">SLOchrannyObal.neni</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLMaterial" bundle="ServerBundle" alphabetize="false">
+    <item key="archivnilepenka">SLMaterial.archivnilepenka</item>
+    <item key="nevhodne">SLMaterial.nevhodne</item>
+    <item key="puvodni">SLMaterial.puvodni</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLTypPapiru" bundle="ServerBundle" alphabetize="false">
+    <item key="rucni">SLTypPapiru.rucni</item>
+    <item key="strojni">SLTypPapiru.strojni</item>
+    <item key="drevity">SLTypPapiru.drevity</item>
+    <item key="novinovy">SLTypPapiru.novinovy</item>
+    <item key="kridovy">SLTypPapiru.kridovy</item>
+    <item key="zzzjiny">SLTypPapiru.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLZabarveniPapiru" bundle="ServerBundle" alphabetize="false">
+    <item key="svetly">SLZabarveniPapiru.svetly</item>
+    <item key="tmavy">SLZabarveniPapiru.tmavy</item>
+    <item key="barevny">SLZabarveniPapiru.barevny</item>
+    <item key="zzzjiny">SLZabarveniPapiru.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLPismo" bundle="ServerBundle" alphabetize="true">
+    <item key="dobre">SLPismo.dobre</item>
+    <item key="necitelne">SLPismo.necitelne</item>
+    <item key="zdegradovane">SLPismo.zdegradovane</item>
+    <item key="zzzjine">SLPismo.jine</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLTypTisku" bundle="ServerBundle" alphabetize="false">
+    <item key="knihtisk">SLTypTisku.knihtisk</item>
+    <item key="rukopis">SLTypTisku.rukopis</item>
+    <item key="tiskzplochy">SLTypTisku.tiskzplochy</item>
+    <item key="zzzjiny">SLTypTisku.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLPrilohaTypPapiru" bundle="ServerBundle" alphabetize="false">
+    <item key="stejnyjakokb">SLPrilohaTypPapiru.stejnyjakokb</item>
+    <item key="rucni">SLPrilohaTypPapiru.rucni</item>
+    <item key="strojni">SLPrilohaTypPapiru.strojni</item>
+    <item key="drevity">SLPrilohaTypPapiru.drevity</item>
+    <item key="novinovy">SLPrilohaTypPapiru.novinovy</item>
+    <item key="kridovy">SLPrilohaTypPapiru.kridovy</item>
+    <item key="zzzjiny">SLPrilohaTypPapiru.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLPrilohaTypPrilohy" bundle="ServerBundle" alphabetize="false">
+    <item key="cd">SLPrilohaTypPrilohy.cd</item>
+    <item key="disketa">SLPrilohaTypPrilohy.disketa</item>
+    <item key="gramofonovadeska">SLPrilohaTypPrilohy.gramofonovadeska</item>
+    <item key="ilustrace">SLPrilohaTypPrilohy.ilustrace</item>
+    <item key="mapa">SLPrilohaTypPrilohy.mapa</item>
+    <item key="predmet">SLPrilohaTypPrilohy.predmet</item>
+    <item key="rys">SLPrilohaTypPrilohy.rys</item>
+    <item key="strih">SLPrilohaTypPrilohy.strih</item>
+    <item key="zzzJiny">SLPrilohaTypPrilohy.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLPrilohaTypTisku" bundle="ServerBundle" alphabetize="false">
+    <item key="hlubotisk">SLPrilohaTypTisku.hlubotisk</item>
+    <item key="plochytisk">SLPrilohaTypTisku.plochytisk</item>
+    <item key="tiskzvysky">SLPrilohaTypTisku.tiskzvysky</item>
+    <item key="zzzJiny">SLPrilohaTypTisku.jiny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLPrilohaBarvaTisku" bundle="ServerBundle" alphabetize="false">
+    <item key="cerna">SLPrilohaBarvaTisku.cerna</item>
+    <item key="jednobarevna">SLPrilohaBarvaTisku.jednobarevna</item>
+    <item key="zzzjina">SLPrilohaBarvaTisku.jina</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLNapadeni" bundle="ServerBundle" alphabetize="true">
+    <item key="plisne">SLNapadeni.plisne</item>
+    <item key="brouci">SLNapadeni.brouci</item>
+    <item key="neni">SLNapadeni.neni</item>
+  </list>
+  <list name="SLSpinave" bundle="ServerBundle" alphabetize="true">
+    <item key="prach">SLSpinave.prach</item>
+    <item key="zvireciexkrementy">SLSpinave.zvireciexkrementy</item>
+    <item key="pokreslene">SLSpinave.pokreslene</item>
+    <item key="neni">SLSpinave.neni</item>
+  </list>
+  <list name="SLPoskozeni" bundle="ServerBundle" alphabetize="true">
+    <item key="hlodavci">SLPoskozeni.hlodavci</item>
+    <item key="vodou">SLPoskozeni.vodou</item>
+    <item key="jinatekutina">SLPoskozeni.jinatekutina</item>
+    <item key="kourem">SLPoskozeni.kourem</item>
+    <item key="ohnem">SLPoskozeni.ohnem</item>
+    <item key="mastnota">SLPoskozeni.mastnota</item>
+    <item key="mechanicke">SLPoskozeni.mechanicke</item>
+    <item key="neni">SLPoskozeni.neni</item>
+  </list>
+  <list name="SLZpusob" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SLZpusob.neni</item>
+    <item key="elektroda">SLZpusob.elektroda</item>
+    <item key="tuzka">SLZpusob.tuzka</item>
+  </list>
+  <list name="DLKde" className="cz.incad.czbrd.dLists.DLKdeEntity" alphabetize="true"></list>
+  <list name="SLObalka" bundle="ServerBundle" alphabetize="false">
+    <item key="neni">SLObalka.neni</item>
+    <item key="nadeskach">SLObalka.nadeskach</item>
+    <item key="vevazana">SLObalka.vevazana</item>
+    <item key="prebal">SLObalka.prebal</item>
+    <item key="obalkaMekkychVazeb">SLObalka.obalkaMekkychVazeb</item>
+    <item key="formouPrilohy">SLObalka.formouPrilohy</item>
+  </list>
+  <list name="SLTypFondu" bundle="ServerBundle" alphabetize="false">
+    <item key="monografie">Monografie</item>
+    <item key="periodikum">Periodikum</item>
+    <item key="hudebniny">Hudebniny</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLdruhZasahu" bundle="ServerBundle" alphabetize="true">
+    <item key="puvodnistav">SLdruhZasahu.puvodnistav</item>
+    <item key="odkyselovani">SLdruhZasahu.odkyselovani</item>
+    <item key="restaurovani">SLdruhZasahu.restaurovani</item>
+    <item key="konzervace">SLdruhZasahu.konzervace</item>
+    <item key="mechanickecisteni">SLdruhZasahu.mechanickecisteni</item>
+    <item key="chemickecisteni">SLdruhZasahu.chemickecisteni</item>
+    <item key="dezinfekce">SLdruhZasahu.dezinfekce</item>
+    <item key="jine">SLdruhZasahu.jine</item>
+    <item key="kontrolniPruzkum">SLdruhZasahu.kontrolniPruzkum</item>
+    <item key="poZivelneKatastrofe">SLdruhZasahu.poZivelneKatastrofe</item>
+    <item key="univerzalniPrevazba">SLdruhZasahu.univerzalniPrevazba</item>
+    <item key="historizujiciPrevazba">SLdruhZasahu.historizujiciPrevazba</item>
+  </list>
+  <list name="Organization" className="cz.incad.czbrd.system.OrganizationEntity" alphabetize="true"></list>
+  <list name="SLRBDocType" bundle="ServerBundle" alphabetize="true">
+    <item key="rb_sg">signatura</item>
+    <item key="rb_id">field001</item>
+    <item key="rb_cnb">cnb</item>
+    <item key="rb_bc">barcode</item>
+  </list>
+  <list name="SLPlainList" bundle="ServerBundle" alphabetize="false">
+    <item key="a">a</item>
+  </list>
+  <list name="SL0123" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL0123.0</item>
+    <item key="x01">SL0123.1</item>
+    <item key="x02">SL0123.2</item>
+    <item key="x03">SL0123.3</item>
+  </list>
+  <list name="SLKde" bundle="ServerBundle" alphabetize="false">
+    <item key="HS">SLKde.HS</item>
+    <item key="HH">SLKde.HH</item>
+    <item key="HP">SLKde.HP</item>
+    <item key="HLS">SLKde.HLS</item>
+    <item key="PS">SLKde.PS</item>
+    <item key="OH">SLKde.OH</item>
+    <item key="OS">SLKde.OS</item>
+    <item key="OP">SLKde.OP</item>
+    <item key="SS">SLKde.SS</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLPrilohaKde" bundle="ServerBundle" alphabetize="false">
+    <item key="HS">SLPrilohaKde.HS</item>
+    <item key="HH">SLPrilohaKde.HH</item>
+    <item key="HP">SLPrilohaKde.HP</item>
+    <item key="HLS">SLPrilohaKde.HLS</item>
+    <item key="PS">SLPrilohaKde.PS</item>
+    <item key="OH">SLPrilohaKde.OH</item>
+    <item key="OS">SLPrilohaKde.OS</item>
+    <item key="OP">SLPrilohaKde.OP</item>
+    <item key="SS">SLPrilohaKde.SS</item>
+    <item key="[null]">SL.NULL</item>
+  </list>
+  <list name="SLRestaurovani" bundle="ServerBundle" alphabetize="false">
+    <item key="komplexni">SLRestaurovani.komplexni</item>
+    <item key="insitu">SLRestaurovani.insitu</item>
+  </list>
+  <list name="SLMetodaOdkyseleniTechnologie" bundle="ServerBundle" alphabetize="false">
+    <item key="H01">SLMetodaOdkyseleniTechnologie.H01</item>
+    <item key="H02">SLMetodaOdkyseleniTechnologie.H02</item>
+    <item key="H03">SLMetodaOdkyseleniTechnologie.H03</item>
+    <item key="H04">SLMetodaOdkyseleniTechnologie.H04</item>
+    <item key="H05">SLMetodaOdkyseleniTechnologie.H05</item>
+    <item key="H06">SLMetodaOdkyseleniTechnologie.H06</item>
+    <item key="H07">SLMetodaOdkyseleniTechnologie.H07</item>
+    <item key="H08">SLMetodaOdkyseleniTechnologie.H08</item>
+    <item key="I01">SLMetodaOdkyseleniTechnologie.I01</item>
+    <item key="I02">SLMetodaOdkyseleniTechnologie.I02</item>
+    <item key="I03">SLMetodaOdkyseleniTechnologie.I03</item>
+    <item key="I04">SLMetodaOdkyseleniTechnologie.I04</item>
+    <item key="I05">SLMetodaOdkyseleniTechnologie.I05</item>
+    <item key="I06">SLMetodaOdkyseleniTechnologie.I06</item>
+  </list>
+  <list name="SLMetodaOdkyseleni" bundle="ServerBundle" alphabetize="false">
+    <item key="hromadna">SLMetodaOdkyseleni.hromadna</item>
+    <item key="individualni">SLMetodaOdkyseleni.individualni</item>
+  </list>
+  <list name="SL012345" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL012345.0</item>
+    <item key="x01">SL012345.1</item>
+    <item key="x02">SL012345.2</item>
+    <item key="x03">SL012345.3</item>
+    <item key="x04">SL012345.4</item>
+    <item key="x05">SL012345.5</item>
+  </list>
+  <list name="SLProveniencniZnak" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL.NULL</item>
+    <item key="rukopisne_exlibris">SLProveniencniZnak.rukopisneExlibris</item>
+    <item key="graficke_exlibris">SLProveniencniZnak.grafickeExlibris</item>
+    <item key="textove_razitko">SLProveniencniZnak.textoveRazitko</item>
+    <item key="razitko_jina_forma">SLProveniencniZnak.razitko</item>
+  </list>
+</lists>

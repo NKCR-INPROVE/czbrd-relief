@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd</deskPackage>
+  <deskName>Exemplar</deskName>
+  <deskHumanHelp>Exemplar_help</deskHumanHelp>
+  <deskHumanName>Exemplar</deskHumanName>
+  <deskDBName>Exemplar</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.Exemplar</machineModel>
+  <fields>
+    <field>
+      <fieldName>bibAutor</fieldName>
+      <fieldHumanName>EvidenceMereni.bibAutor</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibAutor_help</fieldHumanHelp>
+      <fieldDBName>bibAutor</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>256</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibCarKod</fieldName>
+      <fieldHumanName>EvidenceMereni.bibCarKod</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibCarKod_help</fieldHumanHelp>
+      <fieldDBName>bibCarKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recID</fieldName>
+      <fieldHumanName>EvidenceMereni.recID</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recID_help</fieldHumanHelp>
+      <fieldDBName>recID</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>16</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibCNB</fieldName>
+      <fieldHumanName>EvidenceMereni.bibCNB</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibCNB_help</fieldHumanHelp>
+      <fieldDBName>bibCNB</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digDigitalizace</fieldName>
+      <fieldHumanName>EvidenceMereni.digDigitalizace</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.digDigitalizace_help</fieldHumanHelp>
+      <fieldDBName>digDigitalizace</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiUser</fieldName>
+      <fieldHumanName>EvidenceMereni.recEdiUser</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recEdiUser_help</fieldHumanHelp>
+      <fieldDBName>recEdiUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiDate</fieldName>
+      <fieldHumanName>EvidenceMereni.recEdiDate</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recEdiDate_help</fieldHumanHelp>
+      <fieldDBName>recEdiDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cEvidenceMereni</fieldName>
+      <fieldHumanName>Exemplar.cEvidenceMereni</fieldHumanName>
+      <fieldHumanHelp>Exemplar.cEvidenceMereni_help</fieldHumanHelp>
+      <fieldDBName>RExemplar_EvidenceMereniCom</fieldDBName>
+      <fieldType>CMP</fieldType>
+      <fieldRepresentation>CMP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.czbrd.EvidenceMereni</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vizitka</fieldName>
+      <fieldHumanName>Exemplar.vizitka</fieldHumanName>
+      <fieldHumanHelp>Exemplar.vizitka_help</fieldHumanHelp>
+      <fieldDBName>vizitka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1000</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tEvidenceMereni</fieldName>
+      <fieldHumanName>Exemplar.tEvidenceMereni</fieldHumanName>
+      <fieldHumanHelp>Exemplar.tEvidenceMereni_help</fieldHumanHelp>
+      <fieldDBName>RExemplar_EvidenceMereni</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>TAB</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.czbrd.EvidenceMereni</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>kontrolniExemplar</fieldName>
+      <fieldHumanName>Exemplar.kontrolniExemplar</fieldHumanName>
+      <fieldHumanHelp>Exemplar.kontrolniExemplar_help</fieldHumanHelp>
+      <fieldDBName>kontrolniExemplar</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digMikrofilm</fieldName>
+      <fieldHumanName>EvidenceMereni.digMikrofilm</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.digMikrofilm_help</fieldHumanHelp>
+      <fieldDBName>digMikrofilm</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibMistoVydani</fieldName>
+      <fieldHumanName>EvidenceMereni.bibMistoVydani</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibMistoVydani_help</fieldHumanHelp>
+      <fieldDBName>bibMistoVydani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>128</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibNazev</fieldName>
+      <fieldHumanName>EvidenceMereni.bibNazev</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibNazev_help</fieldHumanHelp>
+      <fieldDBName>bibNazev</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>2048</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzNeupExem</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzNeupExem</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzNeupExem_help</fieldHumanHelp>
+      <fieldDBName>fyzNeupExem</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1024</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cOrganization</fieldName>
+      <fieldHumanName>Exemplar.cOrganization</fieldHumanName>
+      <fieldHumanHelp>Exemplar.cOrganization_help</fieldHumanHelp>
+      <fieldDBName>cOrganization</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>Organization</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzPH</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzPH</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzPH_help</fieldHumanHelp>
+      <fieldDBName>fyzPH</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>88</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzPismo</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzPismo</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzPismo_help</fieldHumanHelp>
+      <fieldDBName>fyzPismo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SL123</list>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibPole001</fieldName>
+      <fieldHumanName>EvidenceMereni.bibPole001</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibPole001_help</fieldHumanHelp>
+      <fieldDBName>bibPole001</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzPoznamky</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzPoznamky</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzPoznamky_help</fieldHumanHelp>
+      <fieldDBName>fyzPoznamky</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>1024</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>tPriloha</fieldName>
+      <fieldHumanName>Exemplar.tPriloha</fieldHumanName>
+      <fieldHumanHelp>Exemplar.tPriloha_help</fieldHumanHelp>
+      <fieldDBName>RExemplar_Priloha</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.czbrd.Priloha</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibRokVydani</fieldName>
+      <fieldHumanName>EvidenceMereni.bibRokVydani</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibRokVydani_help</fieldHumanHelp>
+      <fieldDBName>bibRokVydani</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibSigla</fieldName>
+      <fieldHumanName>Exemplar.bibSigla</fieldHumanName>
+      <fieldHumanHelp>Exemplar.bibSigla_help</fieldHumanHelp>
+      <fieldDBName>bibSigla</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>16</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibSignatura</fieldName>
+      <fieldHumanName>EvidenceMereni.bibSignatura</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibSignatura_help</fieldHumanHelp>
+      <fieldDBName>bibSignatura</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>128</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibSysno</fieldName>
+      <fieldHumanName>EvidenceMereni.bibSysno</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibSysno_help</fieldHumanHelp>
+      <fieldDBName>bibSysno</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzTypFondu</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzTypFondu</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzTypFondu_help</fieldHumanHelp>
+      <fieldDBName>fyzTypFondu</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLTypFondu</list>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzTypPapiru</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzTypPapiru</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzTypPapiru_help</fieldHumanHelp>
+      <fieldDBName>fyzTypPapiru</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLTypPapiru</list>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fyzTypTisku</fieldName>
+      <fieldHumanName>EvidenceMereni.fyzTypTisku</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.fyzTypTisku_help</fieldHumanHelp>
+      <fieldDBName>fyzTypTisku</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLTypTisku</list>
+      <validateLength>32</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rUlozeni</fieldName>
+      <fieldHumanName>EvidenceMereni.rUlozeni</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.rUlozeni_help</fieldHumanHelp>
+      <fieldDBName>rUlozeni</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.czbrd.Ulozeni</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibVydavatel</fieldName>
+      <fieldHumanName>Exemplar.bibVydavatel</fieldHumanName>
+      <fieldHumanHelp>Exemplar.bibVydavatel_help</fieldHumanHelp>
+      <fieldDBName>bibVydavatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibVzacnostNKC</fieldName>
+      <fieldHumanName>EvidenceMereni.bibVzacnostNKC</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibVzacnostNKC_help</fieldHumanHelp>
+      <fieldDBName>bibVzacnostNKC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>bibVzacnostSKC</fieldName>
+      <fieldHumanName>EvidenceMereni.bibVzacnostSKC</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.bibVzacnostSKC_help</fieldHumanHelp>
+      <fieldDBName>bibVzacnostSKC</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreDate</fieldName>
+      <fieldHumanName>EvidenceMereni.recCreDate</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recCreDate_help</fieldHumanHelp>
+      <fieldDBName>recCreDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreUser</fieldName>
+      <fieldHumanName>EvidenceMereni.recCreUser</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.recCreUser_help</fieldHumanHelp>
+      <fieldDBName>recCreUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cZasahy</fieldName>
+      <fieldHumanName>Exemplar.cZasahy</fieldHumanName>
+      <fieldHumanHelp>Exemplar.cZasahy_help</fieldHumanHelp>
+      <fieldDBName>RExemplar_Zasahy</fieldDBName>
+      <fieldType>CMP</fieldType>
+      <fieldRepresentation>CMP</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.czbrd.Zasahy</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digZaznamJednotky</fieldName>
+      <fieldHumanName>EvidenceMereni.digZaznamJednotky</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.digZaznamJednotky_help</fieldHumanHelp>
+      <fieldDBName>digZaznamJednotky</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>digZaznamVKat</fieldName>
+      <fieldHumanName>EvidenceMereni.digZaznamVKat</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.digZaznamVKat_help</fieldHumanHelp>
+      <fieldDBName>digZaznamVKat</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>provenienciZnak</fieldName>
+      <fieldHumanName>Exemplar.provenienciZnak</fieldHumanName>
+      <fieldHumanHelp>Exemplar.provenienciZnak_help</fieldHumanHelp>
+      <fieldDBName>RExemplar_Soubor_PZ</fieldDBName>
+      <fieldType>TAB</fieldType>
+      <fieldRepresentation>REP</fieldRepresentation>
+      <reference relationshipType="aggregation" rTable="false">cz.incad.czbrd.Soubor</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>provenienciZnakTyp</fieldName>
+      <fieldHumanName>Exemplar.provenienciZnakTyp</fieldHumanName>
+      <fieldHumanHelp>Exemplar.provenienciZnakTyp_help</fieldHumanHelp>
+      <fieldDBName>provenienciZnakTyp</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>COM</fieldRepresentation>
+      <list>SLProveniencniZnak</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyrazenoZVyberu</fieldName>
+      <fieldHumanName>Exemplar.vyrazenoZVyberu</fieldHumanName>
+      <fieldHumanHelp>Exemplar.vyrazenoZVyberu_help</fieldHumanHelp>
+      <fieldDBName>vyrazenoZVyberu</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>vyrazenoDuvod</fieldName>
+      <fieldHumanName>Exemplar.vyrazenoDuvod</fieldHumanName>
+      <fieldHumanHelp>Exemplar.vyrazenoDuvod_help</fieldHumanHelp>
+      <fieldDBName>vyrazenoDuvod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>duplicitaCcnb</fieldName>
+      <fieldHumanName>Exemplar.duplicitaCcnb</fieldHumanName>
+      <fieldHumanHelp>Exemplar.duplicitaCcnb_help</fieldHumanHelp>
+      <fieldDBName>duplicitaCcnb</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>duplicitaCk</fieldName>
+      <fieldHumanName>Exemplar.duplicitaCk</fieldHumanName>
+      <fieldHumanHelp>Exemplar.duplicitaCk_help</fieldHumanHelp>
+      <fieldDBName>duplicitaCk</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>duplicitaSignatura</fieldName>
+      <fieldHumanName>Exemplar.duplicitaSignatura</fieldHumanName>
+      <fieldHumanHelp>Exemplar.duplicitaSignatura_help</fieldHumanHelp>
+      <fieldDBName>duplicitaSignatura</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="formDefault" formHumanName="EvidenceMereni.Forms.formDefault" id="cz.incad.czbrd.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color=""/>
+          <col>
+            <row fill="LEFT" vfill="TOP">
+              <border type="etched" color="">
+                <title>EvidenceMereni.F.formDefault.hlavniIdentifikacniZnakyKnihy</title>
+              </border>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="bibCarKod" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="30ch" id="bibSignatura" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="rUlozeni.kde" precision="0" scale="0" ref="true" type="text">
+                  <label place="TOP">Exemplar.formDefault.Ulozeni</label>
+                </input>
+                <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="4" id="rUlozeni" precision="19" scale="4" refclass="cz.incad.czbrd.Ulozeni"/>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="100ch" id="bibNazev" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="30ch" id="bibAutor" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="20ch" id="bibMistoVydani" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="30ch" id="bibVydavatel" precision="0" scale="0" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="bibRokVydani" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+              </row>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <row fill="LEFT" vfill="TOP">
+                <col fill="LEFT" vfill="TOP">
+                  <select align="LEFT" valign="TOP" indent="false" id="fyzTypFondu" precision="19" scale="4" type="combo" multi="false" editable="false">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </select>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <select align="LEFT" valign="TOP" indent="false" id="fyzTypPapiru" precision="19" scale="4" type="combo" multi="false" editable="false">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </select>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <select align="LEFT" valign="TOP" indent="false" id="fyzPismo" precision="19" scale="4" type="combo" multi="false" editable="false">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </select>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <select align="LEFT" valign="TOP" indent="false" id="fyzTypTisku" precision="19" scale="4" type="combo" multi="false" editable="false">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </select>
+                </col>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="1ch"/>
+              </row>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <col fill="LEFT" vfill="TOP">
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" width="68ch" id="fyzNeupExem" precision="19" scale="4" type="text">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" width="68ch" id="fyzPoznamky" precision="19" scale="4" type="text" rows="4">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <row fill="LEFT" vfill="TOP">
+                    <label align="LEFT" valign="TOP" indent="false">vyrazenoZVyberuLabel</label>
+                  </row>
+                  <row fill="LEFT" vfill="TOP">
+                    <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="vyrazenoZVyberu" precision="19" scale="4">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </check>
+                    <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" height="5ch"/>
+                    <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="60ch" id="vyrazenoDuvod" precision="19" scale="4" type="longtext" rows="3">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </input>
+                  </row>
+                </row>
+              </col>
+              <col fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+              </col>
+              <col fill="LEFT" vfill="TOP">
+                <row fill="LEFT" vfill="TOP">
+                  <repeat align="LEFT" valign="TOP" indent="false" id="provenienciZnak" precision="19" scale="4" refclass="cz.incad.czbrd.Soubor" form="formShort">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </repeat>
+                  <select align="LEFT" valign="TOP" indent="false" id="provenienciZnakTyp" precision="19" scale="4" type="combo" multi="false" editable="false">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </select>
+                </row>
+              </col>
+            </row>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <row fill="LEFT" vfill="TOP">
+              <input align="LEFT" valign="TOP" indent="false" width="20ch" id="bibCNB" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+              <input align="LEFT" valign="TOP" indent="false" width="20ch" id="bibPole001" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+              <input align="LEFT" valign="TOP" indent="false" width="20ch" id="bibSysno" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <label align="LEFT" valign="TOP" indent="false" columnIndex="2">Exemplar.kontrolniExemplar</label>
+              <check align="LEFT" valign="TOP" indent="false" columnIndex="1" id="kontrolniExemplar" precision="0" scale="0"/>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <cmp align="LEFT" valign="TOP" indent="false" id="cZasahy" precision="0" scale="0" refclass="cz.incad.czbrd.Zasahy" form="ZasahyF"/>
+            </row>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <tabview align="LEFT" valign="TOP" indent="false" id="tEvidenceMereni" precision="0" scale="0" refclass="cz.incad.czbrd.EvidenceMereni" rows="500">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </tabview>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <cmp align="LEFT" valign="TOP" indent="false" id="cEvidenceMereni" precision="0" scale="0" refclass="cz.incad.czbrd.EvidenceMereni" form="formDefault"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <empty align="LEFT" valign="TOP" indent="false" width="67ch" height="3ch"/>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <repeat align="LEFT" valign="TOP" indent="false" id="tPriloha" precision="0" scale="0" refclass="cz.incad.czbrd.Priloha" form="formDefault">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </repeat>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <label align="LEFT" valign="TOP" indent="false">tecky</label>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="recID" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="2" width="15ch" id="recCreDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="15ch" id="recCreUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <selectDate align="LEFT" valign="TOP" indent="false" columnIndex="4" width="15ch" id="recEdiDate" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </selectDate>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="15ch" id="recEdiUser" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="DetailE" formHumanName="DetailE" id="cz.incad.czbrd.Exemplar">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <title>EvidenceMereni.F.formDefault.identifikaceExemplare</title>
+          </border>
+          <row fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="20ch" id="recID" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <border type="etched" color="">
+              <title>EvidenceMereni.F.formDefault.hlavniIdentifikacniZnakyKnihy</title>
+            </border>
+            <row fill="LEFT" vfill="TOP">
+              <input align="LEFT" valign="TOP" indent="false" width="115ch" id="bibNazev" precision="19" scale="4" type="text" rows="2">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <col fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="30ch" id="bibCNB" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="30ch" id="bibPole001" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="30ch" id="bibSysno" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="30ch" id="bibCarKod" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="30ch" id="bibSignatura" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+              </col>
+              <col fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+              </col>
+              <col fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="50ch" id="bibAutor" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="50ch" id="bibRokVydani" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="50ch" id="bibMistoVydani" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="50ch" id="bibVzacnostNKC" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+                <input align="LEFT" valign="TOP" indent="false" width="50ch" id="bibVzacnostSKC" precision="19" scale="4" type="text">
+                  <label place="TOP">
+                    <from-field colon="true"/>
+                  </label>
+                </input>
+              </col>
+              <col fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+              </col>
+              <col fill="LEFT" vfill="TOP">
+                <border type="etched" color="">
+                  <title>EvidenceMereni.F.formDefault.UdajeZpracovani</title>
+                </border>
+                <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+                <check align="LEFT" valign="TOP" indent="false" id="digDigitalizace" precision="19" scale="4">
+                  <label place="LEFT">
+                    <from-field colon="true"/>
+                  </label>
+                </check>
+                <check align="LEFT" valign="TOP" indent="false" id="digMikrofilm" precision="19" scale="4">
+                  <label place="LEFT">
+                    <from-field colon="true"/>
+                  </label>
+                </check>
+                <check align="LEFT" valign="TOP" indent="false" id="digZaznamVKat" precision="19" scale="4">
+                  <label place="LEFT">
+                    <from-field colon="true"/>
+                  </label>
+                </check>
+                <check align="LEFT" valign="TOP" indent="false" id="digZaznamJednotky" precision="19" scale="4">
+                  <label place="LEFT">
+                    <from-field colon="true"/>
+                  </label>
+                </check>
+              </col>
+            </row>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <border type="etched" color="">
+              <title>EvidenceMereni.F.formDefault.skladovaciPodminky</title>
+            </border>
+            <refbutton align="LEFT" valign="TOP" indent="false" columnIndex="1" id="rUlozeni" precision="0" scale="0" refclass="cz.incad.czbrd.Ulozeni">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </refbutton>
+            <empty align="LEFT" valign="TOP" indent="false" columnIndex="2" width="2ch"/>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="3" width="20ch" id="rUlozeni.kde" precision="19" scale="4" ref="true" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="4" width="10ch" id="rUlozeni.teplota" precision="19" scale="4" ref="true" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" columnIndex="5" width="10ch" id="rUlozeni.vlhkost" precision="19" scale="4" ref="true" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+          </row>
+          <row fill="LEFT" vfill="TOP">
+            <row fill="LEFT" vfill="TOP">
+              <input align="LEFT" valign="TOP" indent="false" width="90ch" id="fyzNeupExem" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+              <input align="LEFT" valign="TOP" indent="false" width="90ch" id="fyzPoznamky" precision="19" scale="4" type="text">
+                <label place="TOP">
+                  <from-field colon="true"/>
+                </label>
+              </input>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <border type="solid" color="">
+                <title>EvidenceMereni.F.formDefault.stavExemplare</title>
+              </border>
+              <row fill="LEFT" vfill="TOP">
+                <col fill="LEFT" vfill="TOP">
+                  <radio align="LEFT" valign="TOP" indent="false" id="fyzTypFondu" precision="19" scale="4">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </radio>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <radio align="LEFT" valign="TOP" indent="false" id="fyzTypPapiru" precision="19" scale="4">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </radio>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <radio align="LEFT" valign="TOP" indent="false" id="fyzPismo" precision="19" scale="4">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </radio>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <radio align="LEFT" valign="TOP" indent="false" id="fyzTypTisku" precision="19" scale="4">
+                    <label place="TOP">
+                      <from-field colon="true"/>
+                    </label>
+                  </radio>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="2ch"/>
+                </col>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="1ch"/>
+              </row>
+            </row>
+          </row>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="formDefault"/>
+      <node formName="DetailE"/>
+    </tree>
+  </forms>
+  <functions>
+    <function>
+      <functionName>cz.incad.czbrd.bf.LoadExemplar</functionName>
+      <functionHumanName>cz.incad.czbrd.bf.LoadExemplar</functionHumanName>
+      <functionHumanHelp>EvidenceMereni_cz.incad.czbrd.bf.LoadExemplar_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel01</panelName>
+          <panelHumanName>LoadExemplar.Panel01</panelHumanName>
+          <description>LoadExemplar.Panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>signatura</fieldName>
+              <fieldHumanName>LoadExemplar.Panel01.signatura</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>Panel02</panelName>
+          <panelHumanName>LoadExemplar.Panel02</panelHumanName>
+          <description>LoadExemplar.Panel02_help</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.bf.ExemplarEvidujZasah</functionName>
+      <functionHumanName>cz.incad.czbrd.bf.ExemplarEvidujZasah</functionHumanName>
+      <functionHumanHelp>Exemplar_cz.incad.czbrd.bf.ExemplarEvidujZasah_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>panel01</panelName>
+          <panelHumanName>cz.incad.czbrd.bf.ExemplarEvidujZasah.panel01</panelHumanName>
+          <description>cz.incad.czbrd.bf.ExemplarEvidujZasah.panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>zasah</fieldName>
+              <fieldHumanName>cz.incad.czbrd.bf.ExemplarEvidujZasah.panel01.zasah</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>COM</fieldRepresentation>
+              <list>SLdruhZasahu</list>
+            </panelField>
+          </panelFields>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.bf.ExemplarTiskovyVystupOne</functionName>
+      <functionHumanName>cz.incad.czbrd.bf.ExemplarTiskovyVystupOne</functionHumanName>
+      <functionHumanHelp>Exemplar_cz.incad.czbrd.bf.ExemplarTiskovyVystupOne_help</functionHumanHelp>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.bf.LoadExemplarAleph</functionName>
+      <functionHumanName>cz.incad.czbrd.bf.LoadExemplarAleph</functionHumanName>
+      <functionHumanHelp>Exemplar_cz.incad.czbrd.bf.LoadExemplarAleph_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel01</panelName>
+          <panelHumanName>LoadExemplarAleph.Panel01</panelHumanName>
+          <description>LoadExemplarAleph.Panel01_help</description>
+          <panelFields>
+            <panelField>
+              <fieldName>ccnb</fieldName>
+              <fieldHumanName>ccnb</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>carKod</fieldName>
+              <fieldHumanName>carKod</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>pole001</fieldName>
+              <fieldHumanName>pole001</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>zmenit</fieldName>
+              <fieldHumanName>zmenit</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>nazev</fieldName>
+              <fieldHumanName>nazev</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>2048</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>rokVydani</fieldName>
+              <fieldHumanName>rokVydani</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>64</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>vydavatel</fieldName>
+              <fieldHumanName>vydavatel</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>potvrdit</fieldName>
+              <fieldHumanName>potvrdit</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>ccnbNew</fieldName>
+              <fieldHumanName>ccnbNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>carKodNew</fieldName>
+              <fieldHumanName>carKodNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>pole001New</fieldName>
+              <fieldHumanName>pole001New</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>nazevNew</fieldName>
+              <fieldHumanName>nazevNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>vydavatelNew</fieldName>
+              <fieldHumanName>vydavatelNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>rokVydaniNew</fieldName>
+              <fieldHumanName>rokVydaniNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>64</validateLength>
+            </panelField>
+          </panelFields>
+          <panelForm name="main" id="cz.incad.czbrd.Exemplar">
+            <form-body align="LEFT" valign="TOP">
+              <row fill="LEFT" vfill="TOP">
+                <border type="etched" color="">
+                  <title>LoadExemplarAleph.old</title>
+                </border>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="ccnb" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pole001" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="carKod" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" width="70ch" id="nazev" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="vydavatel" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rokVydani" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="60ch"/>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <border type="etched" color="">
+                  <title>LoadExemplarAleph.new</title>
+                </border>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="ccnbNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pole001New" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" width="70ch" id="nazevNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="vydavatelNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="rokVydaniNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="60ch"/>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <check align="LEFT" valign="TOP" indent="false" id="zmenit" precision="0" scale="0">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </check>
+              </row>
+            </form-body>
+          </panelForm>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>Panel02</panelName>
+          <panelHumanName>Panel02</panelHumanName>
+          <description>Panel02</description>
+          <panelFields>
+            <panelField>
+              <fieldName>potvrdit</fieldName>
+              <fieldHumanName>potvrdit</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>autorNew</fieldName>
+              <fieldHumanName>autorNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>mistoVydaniNew</fieldName>
+              <fieldHumanName>mistoVydaniNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>ccnbNew</fieldName>
+              <fieldHumanName>ccnbNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>carKodNew</fieldName>
+              <fieldHumanName>carKodNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>32</validateLength>
+            </panelField>
+            <panelField>
+              <fieldName>pole001New</fieldName>
+              <fieldHumanName>pole001New</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>nazevNew</fieldName>
+              <fieldHumanName>nazevNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>vydavatelNew</fieldName>
+              <fieldHumanName>vydavatelNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+            </panelField>
+            <panelField>
+              <fieldName>rokVydaniNew</fieldName>
+              <fieldHumanName>rokVydaniNew</fieldHumanName>
+              <fieldType>STR</fieldType>
+              <fieldRepresentation>EDI</fieldRepresentation>
+              <validateLength>64</validateLength>
+            </panelField>
+          </panelFields>
+          <panelForm name="main" id="cz.incad.czbrd.Exemplar">
+            <form-body align="LEFT" valign="TOP">
+              <row fill="LEFT" vfill="TOP">
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="ccnbNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="pole001New" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" id="autorNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" width="70ch" id="nazevNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="1" id="vydavatelNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="2" id="mistoVydaniNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                  <input align="LEFT" valign="TOP" indent="false" columnIndex="3" id="rokVydaniNew" precision="0" scale="0" type="text">
+                    <label place="TOP">
+                      <from-field colon="false"/>
+                    </label>
+                  </input>
+                </row>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" width="60ch"/>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <check align="LEFT" valign="TOP" indent="false" id="potvrdit" precision="0" scale="0">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </check>
+              </row>
+            </form-body>
+          </panelForm>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <function>
+      <functionName>cz.incad.czbrd.bf.KontrolaDuplicit</functionName>
+      <functionHumanName>KontrolaDuplicit</functionHumanName>
+      <functionHumanHelp>Exemplar_KontrolaDuplicit_help</functionHumanHelp>
+      <wizardPanels>
+        <wizardPanel>
+          <panelName>Panel01</panelName>
+          <panelHumanName>KontrolaDuplicit.Panel01</panelHumanName>
+          <description>KontrolaDuplicit.Panel01</description>
+          <panelFields>
+            <panelField>
+              <fieldName>spustit</fieldName>
+              <fieldHumanName>KontrolaDuplicit.spustit</fieldHumanName>
+              <fieldType>BOL</fieldType>
+              <fieldRepresentation>CHK</fieldRepresentation>
+            </panelField>
+          </panelFields>
+          <panelForm name="main" id="cz.incad.czbrd.Exemplar">
+            <form-body align="LEFT" valign="TOP">
+              <row fill="LEFT" vfill="TOP">
+                <check align="LEFT" valign="TOP" indent="false" id="spustit" precision="0" scale="0">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </check>
+              </row>
+            </form-body>
+          </panelForm>
+        </wizardPanel>
+        <wizardPanel>
+          <panelName>Panel02</panelName>
+          <panelHumanName>KontrolaDuplicit.Panel02</panelHumanName>
+          <description>KontrolaDuplicit.Panel02</description>
+          <panelFields/>
+        </wizardPanel>
+      </wizardPanels>
+    </function>
+    <tree name="AvailableBusinessFunctions">
+      <node functionName="cz.incad.czbrd.bf.LoadExemplar"/>
+      <node functionName="cz.incad.czbrd.bf.ExemplarEvidujZasah"/>
+      <node functionName="cz.incad.czbrd.bf.ExemplarTiskovyVystupOne"/>
+      <node functionName="cz.incad.czbrd.bf.LoadExemplarAleph"/>
+      <node functionName="cz.incad.czbrd.bf.KontrolaDuplicit"/>
+    </tree>
+  </functions>
+  <uniqueFields/>
+</desk>

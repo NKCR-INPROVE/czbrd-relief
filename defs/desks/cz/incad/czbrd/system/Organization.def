@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd.system</deskPackage>
+  <deskName>Organization</deskName>
+  <deskHumanHelp>Organization_help</deskHumanHelp>
+  <deskHumanName>Organization</deskHumanName>
+  <deskDBName>Organization</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.system.Organization</machineModel>
+  <fields>
+    <field>
+      <fieldName>en</fieldName>
+      <fieldHumanName>R3CDLMany.en</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.en_help</fieldHumanHelp>
+      <fieldDBName>en</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <validateLength>256</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>cs</fieldName>
+      <fieldHumanName>R3CDLMany.cs</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.cs_help</fieldHumanHelp>
+      <fieldDBName>cs</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <validateLength>256</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fr</fieldName>
+      <fieldHumanName>R3CDLMany.fr</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.fr_help</fieldHumanHelp>
+      <fieldDBName>fr</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <validateLength>256</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>value</fieldName>
+      <fieldHumanName>R3CDLMany.value</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.value_help</fieldHumanHelp>
+      <fieldDBName>value</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <validateLength>64</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>de</fieldName>
+      <fieldHumanName>R3CDLMany.de</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.de_help</fieldHumanHelp>
+      <fieldDBName>de</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <validateLength>256</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>primaryOrder</fieldName>
+      <fieldHumanName>R3CDLMany.primaryOrder</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.primaryOrder_help</fieldHumanHelp>
+      <fieldDBName>primaryOrder</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateEmpty/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>note</fieldName>
+      <fieldHumanName>R3CDLMany.note</fieldHumanName>
+      <fieldHumanHelp>R3CDLMany.note_help</fieldHumanHelp>
+      <fieldDBName>note</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerUrl</fieldName>
+      <fieldHumanName>Organization.xServerUrl</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerUrl_help</fieldHumanHelp>
+      <fieldDBName>xServerUrl</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerDocNumber</fieldName>
+      <fieldHumanName>Organization.xServerDocNumber</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerDocNumber_help</fieldHumanHelp>
+      <fieldDBName>xServerDocNumber</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>op=ill_get_doc&amp;doc_number=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerExemplar</fieldName>
+      <fieldHumanName>Organization.xServerExemplar</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerExemplar_help</fieldHumanHelp>
+      <fieldDBName>xServerExemplar</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>op=item-data&amp;doc_number=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerCcnb</fieldName>
+      <fieldHumanName>Organization.xServerCcnb</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerCcnb_help</fieldHumanHelp>
+      <fieldDBName>xServerCcnb</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>op=find&amp;request=cnb=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerCarKod</fieldName>
+      <fieldHumanName>Organization.xServerCarKod</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerCarKod_help</fieldHumanHelp>
+      <fieldDBName>xServerCarKod</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>op=find&amp;request=bar=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerSetNumber</fieldName>
+      <fieldHumanName>Organization.xServerSetNumber</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerSetNumber_help</fieldHumanHelp>
+      <fieldDBName>xServerSetNumber</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>op=present&amp;set_no=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerSetEntry</fieldName>
+      <fieldHumanName>Organization.xServerSetEntry</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerSetEntry_help</fieldHumanHelp>
+      <fieldDBName>xServerSetEntry</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>set_entry=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerLibrary</fieldName>
+      <fieldHumanName>Organization.xServerLibrary</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerLibrary_help</fieldHumanHelp>
+      <fieldDBName>xServerLibrary</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>library=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerBase</fieldName>
+      <fieldHumanName>Organization.xServerBase</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerBase_help</fieldHumanHelp>
+      <fieldDBName>xServerBase</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <initValue>base=</initValue>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>xServerPrihlasovaciUdajeUzivatel</fieldName>
+      <fieldHumanName>Organization.xServerPrihlasovaciUdajeUzivatel</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerPrihlasovaciUdajeUzivatel_help</fieldHumanHelp>
+      <fieldDBName>xServerPrihlUdajUzivatel</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+    </field>
+    <field>
+      <fieldName>xServerPrihlasovaciUdajeHeslo</fieldName>
+      <fieldHumanName>Organization.xServerPrihlasovaciUdajeHeslo</fieldHumanName>
+      <fieldHumanHelp>Organization.xServerPrihlasovaciUdajeHeslo_help</fieldHumanHelp>
+      <fieldDBName>xServerPrihlUdajHeslo</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="formDefault" formHumanName="DLKde.formDefault" id="cz.incad.czbrd.system.Organization">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="1" width="32ch" id="value" precision="0" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+          <input align="LEFT" valign="TOP" indent="false" columnIndex="2" width="10ch" id="primaryOrder" precision="19" scale="0" type="text">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <col fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="32ch" id="cs" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="32ch" id="en" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <col fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="32ch" id="de" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="32ch" id="fr" precision="0" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </col>
+        </row>
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" width="100ch" id="note" precision="0" scale="0" type="longtext" rows="10">
+            <label place="TOP">
+              <from-field colon="true"/>
+            </label>
+          </input>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="formDefault"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

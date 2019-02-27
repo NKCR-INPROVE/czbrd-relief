@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<desk bundle="ServerBundle">
+  <deskPackage>cz.incad.czbrd</deskPackage>
+  <deskName>Soubor</deskName>
+  <deskHumanHelp>Soubor_help</deskHumanHelp>
+  <deskHumanName>Soubor</deskHumanName>
+  <deskDBName>Soubor</deskDBName>
+  <deskRoot/>
+  <machineModel>cz.incad.czbrd.Soubor</machineModel>
+  <fields>
+    <field>
+      <fieldName>recID</fieldName>
+      <fieldHumanName>Soubor.recID</fieldHumanName>
+      <fieldHumanHelp>Soubor.recID_help</fieldHumanHelp>
+      <fieldDBName>recID</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>16</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiUser</fieldName>
+      <fieldHumanName>Soubor.recEdiUser</fieldHumanName>
+      <fieldHumanHelp>Soubor.recEdiUser_help</fieldHumanHelp>
+      <fieldDBName>recEdiUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recEdiDate</fieldName>
+      <fieldHumanName>Soubor.recEdiDate</fieldHumanName>
+      <fieldHumanHelp>Soubor.recEdiDate_help</fieldHumanHelp>
+      <fieldDBName>recEdiDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rEvidenceMereni</fieldName>
+      <fieldHumanName>Soubor.rEvidenceMereni</fieldHumanName>
+      <fieldHumanHelp>Soubor.rEvidenceMereni_help</fieldHumanHelp>
+      <fieldDBName>rEvidenceMereniS</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.czbrd.EvidenceMereni</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>rEvidenceMereniPriloha</fieldName>
+      <fieldHumanName>Soubor.rEvidenceMereniPriloha</fieldHumanName>
+      <fieldHumanHelp>Soubor.rEvidenceMereniPriloha_help</fieldHumanHelp>
+      <fieldDBName>REMereniPriloha_Soubor</fieldDBName>
+      <fieldType>REF</fieldType>
+      <fieldRepresentation>REF</fieldRepresentation>
+      <reference relationshipType="association" rTable="false">cz.incad.czbrd.EvidenceMereniPriloha</reference>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fileName</fieldName>
+      <fieldHumanName>Soubor.fileName</fieldHumanName>
+      <fieldHumanHelp>Soubor.fileName_help</fieldHumanHelp>
+      <fieldDBName>fileName</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>255</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>note</fieldName>
+      <fieldHumanName>Soubor.note</fieldHumanName>
+      <fieldHumanHelp>Soubor.note_help</fieldHumanHelp>
+      <fieldDBName>note</fieldDBName>
+      <fieldType>TXT</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>file</fieldName>
+      <fieldHumanName>Soubor.file</fieldHumanName>
+      <fieldHumanHelp>Soubor.file_help</fieldHumanHelp>
+      <fieldDBName>rBindata</fieldDBName>
+      <fieldType rTable="false">BIN</fieldType>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fileMimetype</fieldName>
+      <fieldHumanName>Soubor.fileMimetype</fieldHumanName>
+      <fieldHumanHelp>Soubor.fileMimetype_help</fieldHumanHelp>
+      <fieldDBName>fileMimetype</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>128</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>fileSize</fieldName>
+      <fieldHumanName>Soubor.fileSize</fieldHumanName>
+      <fieldHumanHelp>Soubor.fileSize_help</fieldHumanHelp>
+      <fieldDBName>fileSize</fieldDBName>
+      <fieldType>INT</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <computed/>
+      <precision>19</precision>
+    </field>
+    <field>
+      <fieldName>recCreDate</fieldName>
+      <fieldHumanName>Soubor.recCreDate</fieldHumanName>
+      <fieldHumanHelp>Soubor.recCreDate_help</fieldHumanHelp>
+      <fieldDBName>recCreDate</fieldDBName>
+      <fieldType>DAT</fieldType>
+      <fieldRepresentation>COMD</fieldRepresentation>
+      <computed/>
+      <formatPattern>dd.MM.yyyy</formatPattern>
+      <formatPatternForInput>dd.MM.yyyy</formatPatternForInput>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>recCreUser</fieldName>
+      <fieldHumanName>Soubor.recCreUser</fieldHumanName>
+      <fieldHumanHelp>Soubor.recCreUser_help</fieldHumanHelp>
+      <fieldDBName>recCreUser</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <validateLength>64</validateLength>
+      <computed/>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+  </fields>
+  <forms>
+    <screen-form name="formDefault" formHumanName="Soubor.Form.formDefault" id="cz.incad.czbrd.Soubor">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <border type="solid" color="">
+            <margin-outer top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+            <margin-inner top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+          </border>
+          <col fill="LEFT" vfill="TOP">
+            <bin align="LEFT" valign="TOP" indent="false" width="15ch" height="10ch" id="file" precision="19" scale="4"/>
+          </col>
+          <col fill="LEFT" vfill="TOP">
+            <input align="LEFT" valign="TOP" indent="false" width="20ch" id="fileName" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" width="20ch" id="fileSize" precision="19" scale="0" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+            <input align="LEFT" valign="TOP" indent="false" width="20ch" id="fileMimetype" precision="19" scale="4" type="text">
+              <label place="TOP">
+                <from-field colon="true"/>
+              </label>
+            </input>
+          </col>
+        </row>
+      </form-body>
+    </screen-form>
+    <screen-form name="formShort" formHumanName="Soubor.Form.formShort" id="cz.incad.czbrd.Soubor">
+      <form-body align="LEFT" valign="TOP">
+        <row fill="LEFT" vfill="TOP">
+          <input align="LEFT" valign="TOP" indent="false" id="fileName" precision="19" scale="4" type="text">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </input>
+          <bin align="LEFT" valign="TOP" indent="false" id="file" precision="19" scale="4">
+            <label place="TOP">
+              <from-field colon="false"/>
+            </label>
+          </bin>
+        </row>
+      </form-body>
+    </screen-form>
+    <tree name="AvailableForms">
+      <node formName="formDefault"/>
+      <node formName="formShort"/>
+    </tree>
+  </forms>
+  <uniqueFields/>
+</desk>

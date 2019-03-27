@@ -1566,6 +1566,241 @@
       <precision>19</precision>
       <scale>4</scale>
     </field>
+    <field>
+      <fieldName>speczneKnizniBlok</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneKnizniBlok</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneKnizniBlok_help</fieldHumanHelp>
+      <fieldDBName>speczneKnizBlok</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>RAD</fieldRepresentation>
+      <list>SL012345-notNull</list>
+    </field>
+    <field>
+      <fieldName>speczneHrbetnik</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneHrbetnik</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneHrbetnik_help</fieldHumanHelp>
+      <fieldDBName>speczneHrbetnik</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>RAD</fieldRepresentation>
+      <list>SL012345-notNull</list>
+    </field>
+    <field>
+      <fieldName>speczneOrizka</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneOrizka</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneOrizka_help</fieldHumanHelp>
+      <fieldDBName>speczneOrizka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>RAD</fieldRepresentation>
+      <list>SL012345-notNull</list>
+    </field>
+    <field>
+      <fieldName>speczneObalka</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneObalka</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneObalka_help</fieldHumanHelp>
+      <fieldDBName>speczneObalka</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>RAD</fieldRepresentation>
+      <list>SL012345-notNull</list>
+    </field>
+    <field>
+      <fieldName>specznePrachBarva</fieldName>
+      <fieldHumanName>EvidenceMereni.specznePrachBarva</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.specznePrachBarva_help</fieldHumanHelp>
+      <fieldDBName>specznePrachBarva</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>LST</fieldRepresentation>
+      <list>SLZnecisteniBarva</list>
+    </field>
+    <field>
+      <fieldName>specznePrachStruktura</fieldName>
+      <fieldHumanName>EvidenceMereni.specznePrachStruktura</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.specznePrachStruktura_help</fieldHumanHelp>
+      <fieldDBName>specznePrachStrukt</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>LST</fieldRepresentation>
+      <list>SLZnecisteniStruktura</list>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>specznePrachPoznamka</fieldName>
+      <fieldHumanName>EvidenceMereni.specznePrachPoznamka</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.specznePrachPoznamka_help</fieldHumanHelp>
+      <fieldDBName>specznePrachPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <validateLength>4000</validateLength>
+    </field>
+    <field>
+      <fieldName>speczneJineBarva</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneJineBarva</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneJineBarva_help</fieldHumanHelp>
+      <fieldDBName>speczneJineBarva</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>LST</fieldRepresentation>
+      <list>SLZnecisteniBarva</list>
+    </field>
+    <field>
+      <fieldName>speczneJineStruktura</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneJineStruktura</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneJineStruktura_help</fieldHumanHelp>
+      <fieldDBName>speczneJineStrukt</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>LST</fieldRepresentation>
+      <list>SLZnecisteniStruktura</list>
+    </field>
+    <field>
+      <fieldName>speczneJinePoznamka</fieldName>
+      <fieldHumanName>EvidenceMereni.speczneJinePoznamka</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.speczneJinePoznamka_help</fieldHumanHelp>
+      <fieldDBName>speczneJinePozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <validateLength>4000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistRucniPevny</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistRucniPevny</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistRucniPevny_help</fieldHumanHelp>
+      <fieldDBName>zpcistRucPevny</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistRucniPlasticky</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistRucniPlasticky</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistRucniPlasticky_help</fieldHumanHelp>
+      <fieldDBName>zpcistRucPlast</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistRucniPruzny</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistRucniPruzny</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistRucniPruzny_help</fieldHumanHelp>
+      <fieldDBName>zpcistRucPruzny</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistRucniSypky</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistRucniSypky</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistRucniSypky_help</fieldHumanHelp>
+      <fieldDBName>zpcistRucSypky</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistRucniTextil</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistRucniTextil</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistRucniTextil_help</fieldHumanHelp>
+      <fieldDBName>zpcistRucTextil</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistRucniOmeteni</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistRucniOmeteni</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistRucniOmeteni_help</fieldHumanHelp>
+      <fieldDBName>zpcistRucOmet</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistManualElektricke</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistManualElektricke</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistManualElektricke_help</fieldHumanHelp>
+      <fieldDBName>zpcistManElekt</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistManualVzduch</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistManualVzduch</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistManualVzduch_help</fieldHumanHelp>
+      <fieldDBName>zpcistManVzduch</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistManualVysavac</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistManualVysavac</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistManualVysavac_help</fieldHumanHelp>
+      <fieldDBName>zpcistManVysavac</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistStrojniAutomat</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistStrojniAutomat</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistStrojniAutomat_help</fieldHumanHelp>
+      <fieldDBName>zpcistStrojAutomat</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistStrojniPoloautomat</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistStrojniPoloautomat</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistStrojniPoloautomat_help</fieldHumanHelp>
+      <fieldDBName>zpcistStrojPolaut</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistStrojniBox</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistStrojniBox</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistStrojniBox_help</fieldHumanHelp>
+      <fieldDBName>zpcistStrojBox</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistPoznamka</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistPoznamka</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistPoznamka_help</fieldHumanHelp>
+      <fieldDBName>zpcistPozn</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>EDI</fieldRepresentation>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>zpcistPopis</fieldName>
+      <fieldHumanName>EvidenceMereni.zpcistPopis</fieldHumanName>
+      <fieldHumanHelp>EvidenceMereni.zpcistPopis_help</fieldHumanHelp>
+      <fieldDBName>zpcistPopis</fieldDBName>
+      <fieldType>STR</fieldType>
+      <fieldRepresentation>TXT</fieldRepresentation>
+      <validateLength>4000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
+    </field>
   </fields>
   <forms>
     <screen-form name="formDefault" formHumanName="EvidenceMereni.Forms.formDefault" id="cz.incad.czbrd.EvidenceMereni">
@@ -1817,6 +2052,112 @@
                 </row>
                 <row fill="LEFT" vfill="TOP">
                   <empty align="LEFT" valign="TOP" indent="false" width="67ch"/>
+                </row>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <row fill="LEFT" vfill="TOP">
+                  <border type="etched" color="">
+                    <title>specZne</title>
+                  </border>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneKnizniBlok" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneHrbetnik" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneOrizka" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneObalka" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                  </col>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false" width="90ch">specznePopisCisel1</label>
+                  <label align="LEFT" valign="TOP" indent="false">specznePopisCisel2</label>
+                  <label align="LEFT" valign="TOP" indent="false">specznePopisCisel3</label>
+                  <empty align="LEFT" valign="TOP" indent="false" width="90ch" height="1ch"/>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <col fill="LEFT" vfill="TOP">
+                    <border type="etched" color="">
+                      <title>specZnePopisPrach</title>
+                    </border>
+                    <row fill="LEFT" vfill="TOP">
+                      <select align="LEFT" valign="TOP" indent="false" id="specznePrachBarva" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <select align="LEFT" valign="TOP" indent="false" id="specznePrachStruktura" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <input align="LEFT" valign="TOP" indent="false" width="45ch" id="specznePrachPoznamka" precision="19" scale="4" formatPattern="" formatPatternForInput="" type="longtext" rows="3">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </input>
+                    </row>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <border type="etched" color="">
+                      <title>specZnePopisJine</title>
+                    </border>
+                    <row fill="LEFT" vfill="TOP">
+                      <select align="LEFT" valign="TOP" indent="false" id="speczneJineBarva" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <select align="LEFT" valign="TOP" indent="false" id="speczneJineStruktura" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <input align="LEFT" valign="TOP" indent="false" width="45ch" id="speczneJinePoznamka" precision="19" scale="4" type="longtext" rows="3">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </input>
+                    </row>
+                  </col>
                 </row>
               </row>
               <row fill="LEFT" vfill="TOP">
@@ -2371,6 +2712,108 @@
             </row>
             <row fill="LEFT" vfill="TOP">
               <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <border type="etched" color="">
+                <title>zpcist</title>
+              </border>
+              <row fill="LEFT" vfill="TOP">
+                <col fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false">zpcistRucni</label>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniPevny" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniPlasticky" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniPruzny" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniSypky" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniTextil" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniOmeteni" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <empty align="LEFT" valign="TOP" indent="false" width="26ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="5ch" height="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false">zpcistManualni</label>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistManualElektricke" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistManualVzduch" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistManualVysavac" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <empty align="LEFT" valign="TOP" indent="false" width="26ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="5ch" height="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false">zpcistStrojni</label>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistStrojniAutomat" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistStrojniPoloautomat" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistStrojniBox" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <empty align="LEFT" valign="TOP" indent="false" width="26ch"/>
+                </col>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="90ch" id="zpcistPoznamka" precision="0" scale="0" type="text">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </input>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="90ch" id="zpcistPopis" precision="0" scale="0" type="longtext" rows="3">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </input>
+              </row>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <empty align="LEFT" valign="TOP" indent="false" height="1ch"/>
             </row>
           </col>
           <col>

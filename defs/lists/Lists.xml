@@ -247,11 +247,35 @@
     <item key="x04">SL012345.4</item>
     <item key="x05">SL012345.5</item>
   </list>
+  <list name="SL012345-notNull" bundle="ServerBundle" alphabetize="false">
+    <item key="x00">SL012345.0</item>
+    <item key="x01">SL012345.1</item>
+    <item key="x02">SL012345.2</item>
+    <item key="x03">SL012345.3</item>
+    <item key="x04">SL012345.4</item>
+    <item key="x05">SL012345.5</item>
+  </list>
   <list name="SLProveniencniZnak" bundle="ServerBundle" alphabetize="false">
     <item key="[null]">SL.NULL</item>
     <item key="rukopisne_exlibris">SLProveniencniZnak.rukopisneExlibris</item>
     <item key="graficke_exlibris">SLProveniencniZnak.grafickeExlibris</item>
     <item key="textove_razitko">SLProveniencniZnak.textoveRazitko</item>
     <item key="razitko_jina_forma">SLProveniencniZnak.razitko</item>
+  </list>
+  <list name="SLZnecisteniBarva" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL.NULL</item>
+    <item key="cerna">SLZnecisteniBarva.Cerna</item>
+    <item key="tmava">SLZnecisteniBarva.Tmava</item>
+    <item key="seda">SLZnecisteniBarva.Seda</item>
+    <item key="svetla">SLZnecisteniBarva.Svetla</item>
+    <item key="bila">SLZnecisteniBarva.Bila</item>
+    <item key="jina">SLZnecisteniBarva.Jina</item>
+  </list>
+  <list name="SLZnecisteniStruktura" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL.NULL</item>
+    <item key="jemnyPrilnuty">SLZnecisteniStruktura.JemnyPrilnuty</item>
+    <item key="jemnyPoletavy">SLZnecisteniStruktura.JemnyPoletavy</item>
+    <item key="hruby">SLZnecisteniStruktura.Hruby</item>
+    <item key="hrubyCastice">SLZnecisteniStruktura.HrubyCastice</item>
   </list>
 </lists>

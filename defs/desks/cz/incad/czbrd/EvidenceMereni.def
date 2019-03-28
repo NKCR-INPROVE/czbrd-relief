@@ -1574,6 +1574,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>RAD</fieldRepresentation>
       <list>SL012345-notNull</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>speczneHrbetnik</fieldName>
@@ -1583,6 +1585,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>RAD</fieldRepresentation>
       <list>SL012345-notNull</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>speczneOrizka</fieldName>
@@ -1592,6 +1596,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>RAD</fieldRepresentation>
       <list>SL012345-notNull</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>speczneObalka</fieldName>
@@ -1601,6 +1607,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>RAD</fieldRepresentation>
       <list>SL012345-notNull</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>specznePrachBarva</fieldName>
@@ -1610,6 +1618,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>LST</fieldRepresentation>
       <list>SLZnecisteniBarva</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>specznePrachStruktura</fieldName>
@@ -1630,6 +1640,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>TXT</fieldRepresentation>
       <validateLength>4000</validateLength>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>speczneJineBarva</fieldName>
@@ -1639,6 +1651,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>LST</fieldRepresentation>
       <list>SLZnecisteniBarva</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>speczneJineStruktura</fieldName>
@@ -1648,6 +1662,8 @@
       <fieldType>STR</fieldType>
       <fieldRepresentation>LST</fieldRepresentation>
       <list>SLZnecisteniStruktura</list>
+      <precision>19</precision>
+      <scale>4</scale>
     </field>
     <field>
       <fieldName>speczneJinePoznamka</fieldName>
@@ -2068,10 +2084,10 @@
                         <from-field colon="false"/>
                       </label>
                     </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
-                    <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
                     <radio align="LEFT" valign="TOP" indent="false" id="speczneHrbetnik" precision="19" scale="4" cols="1">
@@ -2079,10 +2095,10 @@
                         <from-field colon="false"/>
                       </label>
                     </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
-                    <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
                     <radio align="LEFT" valign="TOP" indent="false" id="speczneOrizka" precision="19" scale="4" cols="1">
@@ -2090,10 +2106,10 @@
                         <from-field colon="false"/>
                       </label>
                     </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
-                    <empty align="LEFT" valign="TOP" indent="false" width="5ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
                     <radio align="LEFT" valign="TOP" indent="false" id="speczneObalka" precision="19" scale="4" cols="1">
@@ -2101,13 +2117,10 @@
                         <from-field colon="false"/>
                       </label>
                     </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="20ch"/>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
                   </col>
                 </row>
                 <row fill="LEFT" vfill="TOP">
-                  <label align="LEFT" valign="TOP" indent="false" width="90ch">specznePopisCisel1</label>
-                  <label align="LEFT" valign="TOP" indent="false">specznePopisCisel2</label>
-                  <label align="LEFT" valign="TOP" indent="false">specznePopisCisel3</label>
                   <empty align="LEFT" valign="TOP" indent="false" width="90ch" height="1ch"/>
                 </row>
                 <row fill="LEFT" vfill="TOP">
@@ -2126,7 +2139,7 @@
                           <from-field colon="false"/>
                         </label>
                       </select>
-                      <input align="LEFT" valign="TOP" indent="false" width="45ch" id="specznePrachPoznamka" precision="19" scale="4" formatPattern="" formatPatternForInput="" type="longtext" rows="3">
+                      <input align="LEFT" valign="TOP" indent="false" width="40ch" id="specznePrachPoznamka" precision="19" scale="4" type="longtext" rows="3">
                         <label place="TOP">
                           <from-field colon="false"/>
                         </label>
@@ -2151,7 +2164,7 @@
                           <from-field colon="false"/>
                         </label>
                       </select>
-                      <input align="LEFT" valign="TOP" indent="false" width="45ch" id="speczneJinePoznamka" precision="19" scale="4" type="longtext" rows="3">
+                      <input align="LEFT" valign="TOP" indent="false" width="40ch" id="speczneJinePoznamka" precision="19" scale="4" type="longtext" rows="3">
                         <label place="TOP">
                           <from-field colon="false"/>
                         </label>
@@ -2750,10 +2763,10 @@
                       <from-field colon="false"/>
                     </label>
                   </check>
-                  <empty align="LEFT" valign="TOP" indent="false" width="26ch"/>
+                  <empty align="LEFT" valign="TOP" indent="false" width="19ch"/>
                 </col>
                 <col fill="LEFT" vfill="TOP">
-                  <empty align="LEFT" valign="TOP" indent="false" width="5ch" height="2ch"/>
+                  <empty align="LEFT" valign="TOP" indent="false" width="4ch" height="2ch"/>
                 </col>
                 <col fill="LEFT" vfill="TOP">
                   <label align="LEFT" valign="TOP" indent="false">zpcistManualni</label>
@@ -2772,10 +2785,10 @@
                       <from-field colon="false"/>
                     </label>
                   </check>
-                  <empty align="LEFT" valign="TOP" indent="false" width="26ch"/>
+                  <empty align="LEFT" valign="TOP" indent="false" width="19ch"/>
                 </col>
                 <col fill="LEFT" vfill="TOP">
-                  <empty align="LEFT" valign="TOP" indent="false" width="5ch" height="2ch"/>
+                  <empty align="LEFT" valign="TOP" indent="false" width="4ch" height="2ch"/>
                 </col>
                 <col fill="LEFT" vfill="TOP">
                   <label align="LEFT" valign="TOP" indent="false">zpcistStrojni</label>
@@ -2794,7 +2807,7 @@
                       <from-field colon="false"/>
                     </label>
                   </check>
-                  <empty align="LEFT" valign="TOP" indent="false" width="26ch"/>
+                  <empty align="LEFT" valign="TOP" indent="false" width="19ch"/>
                 </col>
               </row>
               <row fill="LEFT" vfill="TOP">
@@ -3141,6 +3154,106 @@
                 </row>
                 <row fill="LEFT" vfill="TOP">
                   <empty align="LEFT" valign="TOP" indent="false" width="67ch"/>
+                </row>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <row fill="LEFT" vfill="TOP">
+                  <border type="etched" color="">
+                    <title>specZne</title>
+                  </border>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneKnizniBlok" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneHrbetnik" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneOrizka" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <radio align="LEFT" valign="TOP" indent="false" id="speczneObalka" precision="19" scale="4" cols="1">
+                      <label place="TOP">
+                        <from-field colon="false"/>
+                      </label>
+                    </radio>
+                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                  </col>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="90ch" height="1ch"/>
+                </row>
+                <row fill="LEFT" vfill="TOP">
+                  <col fill="LEFT" vfill="TOP">
+                    <border type="etched" color="">
+                      <title>specZnePopisPrach</title>
+                    </border>
+                    <row fill="LEFT" vfill="TOP">
+                      <select align="LEFT" valign="TOP" indent="false" id="specznePrachBarva" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <select align="LEFT" valign="TOP" indent="false" id="specznePrachStruktura" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <input align="LEFT" valign="TOP" indent="false" width="40ch" id="specznePrachPoznamka" precision="19" scale="4" type="longtext" rows="3">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </input>
+                    </row>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                  </col>
+                  <col fill="LEFT" vfill="TOP">
+                    <border type="etched" color="">
+                      <title>specZnePopisJine</title>
+                    </border>
+                    <row fill="LEFT" vfill="TOP">
+                      <select align="LEFT" valign="TOP" indent="false" id="speczneJineBarva" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <select align="LEFT" valign="TOP" indent="false" id="speczneJineStruktura" precision="19" scale="4" type="combo" multi="false" editable="false">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </select>
+                      <input align="LEFT" valign="TOP" indent="false" width="40ch" id="speczneJinePoznamka" precision="19" scale="4" type="longtext" rows="3">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </input>
+                    </row>
+                  </col>
                 </row>
               </row>
               <row fill="LEFT" vfill="TOP">
@@ -3686,6 +3799,105 @@
             </row>
             <row fill="LEFT" vfill="TOP">
               <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
+            </row>
+            <row fill="LEFT" vfill="TOP">
+              <border type="etched" color="">
+                <title>zpcist</title>
+              </border>
+              <row fill="LEFT" vfill="TOP">
+                <col fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false">zpcistRucni</label>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniPevny" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniPlasticky" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniPruzny" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniSypky" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniTextil" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistRucniOmeteni" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <empty align="LEFT" valign="TOP" indent="false" width="19ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="4ch" height="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false">zpcistManualni</label>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistManualElektricke" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistManualVzduch" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistManualVysavac" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <empty align="LEFT" valign="TOP" indent="false" width="19ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <empty align="LEFT" valign="TOP" indent="false" width="4ch" height="2ch"/>
+                </col>
+                <col fill="LEFT" vfill="TOP">
+                  <label align="LEFT" valign="TOP" indent="false">zpcistStrojni</label>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistStrojniAutomat" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistStrojniPoloautomat" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <check align="LEFT" valign="TOP" indent="false" id="zpcistStrojniBox" precision="19" scale="4">
+                    <label place="LEFT">
+                      <from-field colon="false"/>
+                    </label>
+                  </check>
+                  <empty align="LEFT" valign="TOP" indent="false" width="19ch"/>
+                </col>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="90ch" id="zpcistPoznamka" precision="0" scale="0" type="text">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </input>
+              </row>
+              <row fill="LEFT" vfill="TOP">
+                <input align="LEFT" valign="TOP" indent="false" width="90ch" id="zpcistPopis" precision="0" scale="0" type="longtext" rows="3">
+                  <label place="TOP">
+                    <from-field colon="false"/>
+                  </label>
+                </input>
+              </row>
             </row>
           </col>
           <col>

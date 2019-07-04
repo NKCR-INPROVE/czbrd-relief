@@ -53,6 +53,7 @@ public class ReliefUser implements Serializable {
     public static final String PROP_EXPLORER = "cz.incad.relief.czbrd.isexplorer";
     public static final String PROP_CORRECTOR = "cz.incad.relief.czbrd.isCorrector";
     public static final String PROP_ORGANIZATION = "cz.incad.relief.czbrd.organization";
+    public static final String PROP_EDITORPH =  "cz.incad.relief.czbrd.iseditorph";
     /**
      * Value true
      */
@@ -173,6 +174,15 @@ public class ReliefUser implements Serializable {
         return PROP_VALUE_TRUE.equals(getProperties(PROP_CORRECTOR));
     }
 
+    /**
+     ***************************************************************************
+     *
+     * @return
+     */
+    public boolean isEditorPh() {
+        return PROP_VALUE_TRUE.equals(getProperties(PROP_EDITORPH));
+    }
+    
     /**
      ***************************************************************************
      *

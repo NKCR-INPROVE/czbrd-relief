@@ -48,6 +48,7 @@ public class UsersAdministrationEntity extends Record_A implements Serializable 
     public static final String F_note_STR = "note";
     public static final String F_cOrganization_STR = "cOrganization";
     public static final String F_isActive_BOO = "isActive";
+    public static final String F_isEditorPh_BOO = "isEditorPh";
 
     /**
      ***************************************************************************
@@ -192,6 +193,7 @@ public class UsersAdministrationEntity extends Record_A implements Serializable 
         rec.getSimpleField(F_isCurator_BOO).setValue(false);
         rec.getSimpleField(F_isExplorer_BOO).setValue(false);
         rec.getSimpleField(F_isCorrector_BOO).setValue(false);
+        rec.getSimpleField(F_isEditorPh_BOO).setValue(false);
 
         return rec;
     }
@@ -328,6 +330,9 @@ public class UsersAdministrationEntity extends Record_A implements Serializable 
         String userIsExplorer = rec.getSimpleField(F_isExplorer_BOO).getValue().toString();
         String userIsCorrector = rec.getSimpleField(F_isCorrector_BOO).getValue().toString();
         String userOrganization = (String) rec.getSimpleField(F_cOrganization_STR).getValue();
+        String userIsEditorPh = rec.getSimpleField(F_isEditorPh_BOO).getValue().toString();
+        
+        LOG.log(Level.WARNING, "user is editor "+ userIsEditorPh);
 
         //Korekce dat pro uložení do Relief repository
         if (userFirstName == null) {
@@ -359,6 +364,7 @@ public class UsersAdministrationEntity extends Record_A implements Serializable 
             securityProperty.setProperty(ReliefUser.PROP_CURATOR, userIsCurator);
             securityProperty.setProperty(ReliefUser.PROP_EXPLORER, userIsExplorer);
             securityProperty.setProperty(ReliefUser.PROP_CORRECTOR, userIsCorrector);
+            securityProperty.setProperty(ReliefUser.PROP_EDITORPH, userIsEditorPh);
             rHandler.getSecurityAdministrator().setIdentityProperties(userLogin, securityProperty);
         } catch (NoSuchUserException ex) {
             vex.addField(userLogin, "Tento uživatel neexistuje v repository Relief.", false);

@@ -5,10 +5,12 @@
 package cz.incad.czbrd;
 
 import com.amaio.plaant.businessFunctions.AddException;
+import com.amaio.plaant.businessFunctions.AnnotationKeys;
 import com.amaio.plaant.businessFunctions.TriggerContext;
 import com.amaio.plaant.businessFunctions.UpdateException;
 import com.amaio.plaant.businessFunctions.ValidationException;
 import com.amaio.plaant.sync.Record;
+import cz.incad.czbrd.common.ReliefUser;
 import cz.incad.czbrd.common.Utils;
 import cz.incad.czbrd.dLists.SLMetodaOdkyseleni;
 import cz.incad.czbrd.dLists.SLMetodaOdkyseleniTechnologie;
@@ -90,6 +92,16 @@ public class EvidenceMereniPrilohaEntity extends Record_A implements Serializabl
     public static final String F_zmcWallmaster_BOO = "zmcWallmaster";
     public static final String F_zmcWishab_BOO = "zmcWishab";
     public static final String F_zmcJine_BOO = "zmcJine";
+    
+    public static final String F_barevnostTypPapiru_STR = "barevnostTypPapiru";
+    public static final String F_barevnostPH_STR = "barevnostPH";
+    public static final String F_barevnostPolymerStup_INT = "barevnostPolymerStup";
+    public static final String F_barevnostPevnostTah_INT = "barevnostPevnostTah";
+    public static final String F_barevnostPevnostTahOhyb_INT = "barevnostPevnostTahOhyb";
+    public static final String F_barevnostObsahLignin_INT = "barevnostObsahLignin";
+    public static final String F_barevnostObsahBilkovin_INT = "barevnostObsahBilkovin";
+    public static final String F_barevnostObsahPryskyrice_INT = "barevnostObsahPryskyrice";
+    public static final String F_barevnostPritomnostOzp_STR = "barevnostPritomnostOzp";
 
     //public static final String f_ = "";
     /**
@@ -104,6 +116,18 @@ public class EvidenceMereniPrilohaEntity extends Record_A implements Serializabl
         record = super.onCreateLocal(record);
         return record;
     }
+
+    @Override
+    public Record onGetRecord(Record rec) {
+        ReliefUser ru = new ReliefUser(getTC());
+        if (ru.isEditorPh()) {
+            setFiledsForEditorPh(rec);
+            rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            return rec;
+        }
+        return super.onGetRecord(rec); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
     /**
      ***************************************************************************
@@ -237,4 +261,64 @@ public class EvidenceMereniPrilohaEntity extends Record_A implements Serializabl
         );
     }
 
+    private void setFiledsForEditorPh(Record rec) {
+        rec.getSimpleField(F_merZpusob_STR).setAnnotation(AnnotationKeys.HIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_merKde_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_merStrana_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_merPH_NUM).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_note_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pMechChybCast_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pMechPrehPrek_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pMechKrehkost_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pMechLepPas_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pMechNeni_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pMechTrhliny_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pBioHmyz_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pBioHlodavci_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pBioPlisBak_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pBioNeni_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pChemPrach_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pChemBarSkv_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pChemJinTek_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pChemVoda_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_pChemTepPos_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostL_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostA_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostB_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostE_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_hmotnost_NUM).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostKde_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_ptaAnalyzy_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_ptaCisteni_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_ptaPouzPros_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_ptaZasah_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_moAplikace_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zDezinfekcePozn_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zIsDezinfekce_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zMechCisteniPozn_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zOpravaPozn_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zPouzMatChem_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoDoplneniPokryvuDesek_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoDoplneniZtratListu_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoNasazeniHrbetniku_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoOpravaTrhlinListu_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoPripevneniDesky_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoVyrovnaniDeformaci_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoZajisteniUvolnenychCastiJaponskymPapirem_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zoZpevneniHranRohuListu_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zmcPurus_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zmcVysavac_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zmcWallmaster_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zmcWishab_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_zmcJine_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostTypPapiru_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostPH_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostPolymerStup_INT).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostPevnostTah_INT).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostPevnostTahOhyb_INT).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostObsahLignin_INT).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostObsahBilkovin_INT).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostObsahPryskyrice_INT).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_barevnostPritomnostOzp_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+    }
 }

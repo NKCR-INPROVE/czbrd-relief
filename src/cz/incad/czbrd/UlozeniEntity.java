@@ -79,7 +79,8 @@ public class UlozeniEntity extends Record_A implements Serializable {
             return mtdt;
         }
 
-        if (ru.isExplorer()) {
+        if (ru.isExplorer() | ru.isEditorPh()) {
+            LOG.log(Level.WARNING, "in Editor PH line 83/ulozeni");
             //průzkumník - smí vidět záznamy své organizace
             filter = mtdt.getFilter();
             if (filter == null) {
@@ -226,7 +227,11 @@ public class UlozeniEntity extends Record_A implements Serializable {
             if (!userLogin.equals(userRecord)) {
                 rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
             }
-
+        } else if (ru.isEditorPh()) {
+            if(!organizationUser.equals(organizationRecord)) {
+                rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+                rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+            }
         } else {
             //ostatní uživatelé - nesmí nic.
             rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);

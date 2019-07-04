@@ -56,6 +56,10 @@ public class ExemplarEntity extends Record_A implements Serializable {
     public static final String F_bibMistoVydani_STR = "bibMistoVydani";
     public static final String F_bibVydavatel_STR = "bibVydavatel";
     public static final String F_kontrolniExemplar_BOO = "kontrolniExemplar";
+    public static final String F_provenienciZnakTyp_STR = "provenienciZnakTyp";
+    public static final String F_fyzPoznamky_STR = "fyzPoznamky";
+    public static final String F_vyrazenoZVyberu_BOO = "vyrazenoZVyberu";
+    public static final String F_vyrazenoDuvod_STR = "vyrazenoDuvod";
 
     public static final String F_rUlozeni_REF = "rUlozeni";
 
@@ -69,10 +73,12 @@ public class ExemplarEntity extends Record_A implements Serializable {
     @Override
     public Metadata onMetadataChanged(Metadata mtdt) throws QueryException {
         Column column_cOrganization;
+        Column column_cSignatura;
         Filter filter;
         Columns columns;
         ReliefUser ru;
         FilterRule frMandatory;
+        FilterRule frMandatory2;
         FilterRule frLast;
 
         super.onMetadataChanged(mtdt);
@@ -104,7 +110,7 @@ public class ExemplarEntity extends Record_A implements Serializable {
         if (ru.isCurator()) {
             return mtdt;
         }
-
+        
         if (ru.isExplorer()) {
             //průzkumník - smí vidět záznamy své organizace
             filter = mtdt.getFilter();
@@ -133,6 +139,37 @@ public class ExemplarEntity extends Record_A implements Serializable {
                 }
             }
 
+        } else if(ru.isEditorPh()) {
+            filter = mtdt.getFilter();
+            if (filter == null) {
+                filter = new Filter();
+            }
+            //Vytvoříme si naše povinné filterrule
+            column_cOrganization = DBB.createColumn(ExemplarEntity.class.getName(), F_cOrganization_STR);
+            column_cSignatura = DBB.createColumn(ExemplarEntity.class.getName(), F_bibSignatura_STR);
+            frMandatory = new FilterRule(Filter.AND_OP, 1, column_cSignatura, Filter.BEGIN_CRIT, "54 E", 0, false, false);
+            frMandatory2 = new FilterRule(Filter.OR_OP, 0, column_cSignatura, Filter.BEGIN_CRIT, "54E", 1, false, false);
+            //frMandatory = new FilterRule(Filter.AND_OP, 1, column_cOrganization, Filter.EQUAL_CRIT, ru.getOrganization(), 1, false, false);
+
+            if (filter.getRulesCount() == 0) {
+                filter.addRule(frMandatory);
+                filter.addRule(frMandatory2);
+            } else {
+                frLast = filter.getRule(filter.getRulesCount() - 2);
+                if (ReliefFilter.isFilterRuleEquals(frMandatory, frLast)) {
+                    //poslední pravidlo je to naše pravidlo, takže OK
+                } else {
+                    //Vymažeme všechny předchozí výskyty povinného filterrule
+                    for (int i = 0; i < filter.getRulesCount(); i++) {
+                        if (ReliefFilter.isFilterRuleEquals(frMandatory, filter.getRule(i))) {
+                            filter.removeRule(i);
+                        }
+                    }
+                    filter.addRule(frMandatory);
+                    filter.addRule(frMandatory2);
+                }
+            }
+            
         } else {
             //ostatní uživatelé - nesmí nic vidět
             filter = new Filter();
@@ -197,6 +234,10 @@ public class ExemplarEntity extends Record_A implements Serializable {
                 }
             }
 
+        } else if (ru.isEditorPh()) {
+                //rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+                setFiledsForEditorPh(rec);
+                rec.setAnnotation(AnnotationKeys.REMOVE_FORBIDDEN_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
         } else {
             //ostatní uživatelé - nesmí nic.
             rec.setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
@@ -557,6 +598,32 @@ public class ExemplarEntity extends Record_A implements Serializable {
         }
     }
 
+    private void setFiledsForEditorPh(Record rec) {
+        rec.getSimpleField(F_bibCarKod_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_vizitka_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibNazev_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibRokVydani_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzPH_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzTypFondu_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzNeupExem_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzTypPapiru_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzPismo_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibSigla_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibCNB_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibSysno_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibPole001_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibMistoVydani_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibVydavatel_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_kontrolniExemplar_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibSignatura_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibAutor_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzTypTisku_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_bibAutor_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_provenienciZnakTyp_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_fyzPoznamky_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_vyrazenoZVyberu_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        rec.getSimpleField(F_vyrazenoDuvod_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+    }
 }
 
 /**

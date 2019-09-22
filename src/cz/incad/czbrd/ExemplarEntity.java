@@ -620,7 +620,7 @@ public class ExemplarEntity extends Record_A implements Serializable {
         rec.getSimpleField(F_fyzTypTisku_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
         rec.getSimpleField(F_bibAutor_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
         rec.getSimpleField(F_provenienciZnakTyp_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
-        rec.getSimpleField(F_fyzPoznamky_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
+        //rec.getSimpleField(F_fyzPoznamky_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
         rec.getSimpleField(F_vyrazenoZVyberu_BOO).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
         rec.getSimpleField(F_vyrazenoDuvod_STR).setAnnotation(AnnotationKeys.READ_ONLY_SECURITY_PROPERTY, AnnotationKeys.TRUE_VALUE);
     }

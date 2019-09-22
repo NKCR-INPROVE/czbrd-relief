@@ -122,12 +122,14 @@ public class ExemplarEvidujZasah extends BussinesFunction_A implements Serializa
             throw new WizardException("Vybraný záznam nemá přiřazenu organizaci, kontaktujte vašeho administrátora.");
         }
 
-        if (!(ru.isExplorer() || ru.isSystemAdmin())) {
+        if (!(ru.isExplorer() || ru.isSystemAdmin() || ru.isEditorPh())) {
             throw new WizardException("Pro tuto akci nemáte dostatečná oprávnění.");
         }
 
         if (!organizationUser.equalsIgnoreCase(organizationRecord)) {
-            throw new WizardException("Vybraný záznam patří jiné organizaci, nemáte oprávnění jej editovat.");
+            if(!ru.isEditorPh()) {
+                throw new WizardException("Vybraný záznam patří jiné organizaci, nemáte oprávnění jej editovat.");
+            }
         }
 
         //Naplníme pole názvy sloupců které se mají při čištění záznamu ignorovat

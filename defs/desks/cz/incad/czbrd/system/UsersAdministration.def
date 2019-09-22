@@ -149,8 +149,6 @@
       <fieldDBName>isExplorer</fieldDBName>
       <fieldType>BOL</fieldType>
       <fieldRepresentation>CHK</fieldRepresentation>
-      <precision>19</precision>
-      <scale>4</scale>
     </field>
     <field>
       <fieldName>isCurator</fieldName>
@@ -159,8 +157,6 @@
       <fieldDBName>isCurator</fieldDBName>
       <fieldType>BOL</fieldType>
       <fieldRepresentation>CHK</fieldRepresentation>
-      <precision>19</precision>
-      <scale>4</scale>
     </field>
     <field>
       <fieldName>isSystemAdmin</fieldName>
@@ -196,6 +192,14 @@
       <computed/>
       <precision>19</precision>
       <scale>4</scale>
+    </field>
+    <field>
+      <fieldName>isEditorPh</fieldName>
+      <fieldHumanName>UsersAdministration.isEditorPh</fieldHumanName>
+      <fieldHumanHelp>UsersAdministration.isEditorPh_help</fieldHumanHelp>
+      <fieldDBName>isEditorPh</fieldDBName>
+      <fieldType>BOL</fieldType>
+      <fieldRepresentation>CHK</fieldRepresentation>
     </field>
   </fields>
   <forms>
@@ -266,6 +270,11 @@
             </label>
           </check>
           <check align="LEFT" valign="TOP" indent="false" id="isExplorer" precision="0" scale="0">
+            <label place="LEFT">
+              <from-field colon="true"/>
+            </label>
+          </check>
+          <check align="LEFT" valign="TOP" indent="false" id="isEditorPh" precision="0" scale="0">
             <label place="LEFT">
               <from-field colon="true"/>
             </label>

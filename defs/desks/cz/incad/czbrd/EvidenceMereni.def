@@ -1650,7 +1650,7 @@
       <fieldDBName>speczneJineBarva</fieldDBName>
       <fieldType>STR</fieldType>
       <fieldRepresentation>LST</fieldRepresentation>
-      <list>SLZnecisteniBarva</list>
+      <list>SLZnecisteniPrachBarva</list>
       <precision>19</precision>
       <scale>4</scale>
     </field>
@@ -1661,7 +1661,7 @@
       <fieldDBName>speczneJineStrukt</fieldDBName>
       <fieldType>STR</fieldType>
       <fieldRepresentation>LST</fieldRepresentation>
-      <list>SLZnecisteniStruktura</list>
+      <list>SLZnecisteniPrachStruktura</list>
       <precision>19</precision>
       <scale>4</scale>
     </field>
@@ -1956,8 +1956,10 @@
                   <empty align="LEFT" valign="TOP" indent="false" width="1ch"/>
                 </col>
                 <col fill="LEFT" vfill="TOP">
-                  <border type="etched" color="">
+                  <border type="solid" color="">
                     <title>EvidenceMereni.F.formDefault.knizniBlok</title>
+                    <margin-outer top="4mm" left="4mm" right="4mm" bottom="4mm"/>
+                    <margin-inner top="4mm" left="4mm" right="4mm" bottom="4mm"/>
                   </border>
                   <col fill="LEFT" vfill="TOP">
                     <radio align="LEFT" valign="TOP" indent="false" id="posPredsadka" precision="19" scale="4" cols="1">
@@ -2075,7 +2077,7 @@
               </row>
               <row fill="LEFT" vfill="TOP">
                 <row fill="LEFT" vfill="TOP">
-                  <border type="etched" color="">
+                  <border type="solid" color="">
                     <title>specZne</title>
                   </border>
                   <col fill="LEFT" vfill="TOP">
@@ -2125,7 +2127,7 @@
                 </row>
                 <row fill="LEFT" vfill="TOP">
                   <col fill="LEFT" vfill="TOP">
-                    <border type="etched" color="">
+                    <border type="solid" color="">
                       <title>specZnePopisPrach</title>
                     </border>
                     <row fill="LEFT" vfill="TOP">
@@ -2150,7 +2152,7 @@
                     <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
-                    <border type="etched" color="">
+                    <border type="solid" color="">
                       <title>specZnePopisJine</title>
                     </border>
                     <row fill="LEFT" vfill="TOP">
@@ -2727,7 +2729,7 @@
               <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
             </row>
             <row fill="LEFT" vfill="TOP">
-              <border type="etched" color="">
+              <border type="solid" color="">
                 <title>zpcist</title>
               </border>
               <row fill="LEFT" vfill="TOP">
@@ -3045,7 +3047,7 @@
                   <empty align="LEFT" valign="TOP" indent="false" width="1ch"/>
                 </col>
                 <col fill="LEFT" vfill="TOP">
-                  <border type="etched" color="">
+                  <border type="solid" color="">
                     <title>EvidenceMereni.F.formDefault.knizniBlok</title>
                   </border>
                   <col fill="LEFT" vfill="TOP">
@@ -3158,49 +3160,51 @@
               </row>
               <row fill="LEFT" vfill="TOP">
                 <row fill="LEFT" vfill="TOP">
-                  <border type="etched" color="">
-                    <title>specZne</title>
-                  </border>
                   <col fill="LEFT" vfill="TOP">
-                    <radio align="LEFT" valign="TOP" indent="false" id="speczneKnizniBlok" precision="19" scale="4" cols="1">
-                      <label place="TOP">
-                        <from-field colon="false"/>
-                      </label>
-                    </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
-                  </col>
-                  <col fill="LEFT" vfill="TOP">
-                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
-                  </col>
-                  <col fill="LEFT" vfill="TOP">
-                    <radio align="LEFT" valign="TOP" indent="false" id="speczneHrbetnik" precision="19" scale="4" cols="1">
-                      <label place="TOP">
-                        <from-field colon="false"/>
-                      </label>
-                    </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
-                  </col>
-                  <col fill="LEFT" vfill="TOP">
-                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
-                  </col>
-                  <col fill="LEFT" vfill="TOP">
-                    <radio align="LEFT" valign="TOP" indent="false" id="speczneOrizka" precision="19" scale="4" cols="1">
-                      <label place="TOP">
-                        <from-field colon="false"/>
-                      </label>
-                    </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
-                  </col>
-                  <col fill="LEFT" vfill="TOP">
-                    <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
-                  </col>
-                  <col fill="LEFT" vfill="TOP">
-                    <radio align="LEFT" valign="TOP" indent="false" id="speczneObalka" precision="19" scale="4" cols="1">
-                      <label place="TOP">
-                        <from-field colon="false"/>
-                      </label>
-                    </radio>
-                    <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                    <border type="solid" color="">
+                      <title>specZne</title>
+                    </border>
+                    <col fill="LEFT" vfill="TOP">
+                      <radio align="LEFT" valign="TOP" indent="false" id="speczneKnizniBlok" precision="19" scale="4" cols="1">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </radio>
+                      <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                    </col>
+                    <col fill="LEFT" vfill="TOP">
+                      <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                    </col>
+                    <col fill="LEFT" vfill="TOP">
+                      <radio align="LEFT" valign="TOP" indent="false" id="speczneHrbetnik" precision="19" scale="4" cols="1">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </radio>
+                      <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                    </col>
+                    <col fill="LEFT" vfill="TOP">
+                      <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                    </col>
+                    <col fill="LEFT" vfill="TOP">
+                      <radio align="LEFT" valign="TOP" indent="false" id="speczneOrizka" precision="19" scale="4" cols="1">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </radio>
+                      <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                    </col>
+                    <col fill="LEFT" vfill="TOP">
+                      <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
+                    </col>
+                    <col fill="LEFT" vfill="TOP">
+                      <radio align="LEFT" valign="TOP" indent="false" id="speczneObalka" precision="19" scale="4" cols="1">
+                        <label place="TOP">
+                          <from-field colon="false"/>
+                        </label>
+                      </radio>
+                      <empty align="LEFT" valign="TOP" indent="false" width="15ch"/>
+                    </col>
                   </col>
                 </row>
                 <row fill="LEFT" vfill="TOP">
@@ -3208,7 +3212,7 @@
                 </row>
                 <row fill="LEFT" vfill="TOP">
                   <col fill="LEFT" vfill="TOP">
-                    <border type="etched" color="">
+                    <border type="solid" color="">
                       <title>specZnePopisPrach</title>
                     </border>
                     <row fill="LEFT" vfill="TOP">
@@ -3233,7 +3237,7 @@
                     <empty align="LEFT" valign="TOP" indent="false" width="4ch"/>
                   </col>
                   <col fill="LEFT" vfill="TOP">
-                    <border type="etched" color="">
+                    <border type="solid" color="">
                       <title>specZnePopisJine</title>
                     </border>
                     <row fill="LEFT" vfill="TOP">
@@ -3801,7 +3805,7 @@
               <empty align="LEFT" valign="TOP" indent="false" height="2ch"/>
             </row>
             <row fill="LEFT" vfill="TOP">
-              <border type="etched" color="">
+              <border type="solid" color="">
                 <title>zpcist</title>
               </border>
               <row fill="LEFT" vfill="TOP">

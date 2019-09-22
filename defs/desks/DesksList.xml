@@ -1,4 +1,4 @@
-<list bundle="ServerBundle" projectId="czbrd-relief">
+<list bundle="ServerBundle" projectId="data">
 	<desks>
 		<desk deskName="cz.incad.czbrd.r3c.R3CDLMany"></desk>
 		<desk deskName="cz.incad.czbrd.r3c.R3CConfiguration"></desk>

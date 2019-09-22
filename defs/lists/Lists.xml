@@ -278,4 +278,20 @@
     <item key="hruby">SLZnecisteniStruktura.Hruby</item>
     <item key="hrubyCastice">SLZnecisteniStruktura.HrubyCastice</item>
   </list>
+  <list name="SLZnecisteniPrachBarva" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL.NULL</item>
+    <item key="cerna">SLZnecisteniPrachBarva.Cerna</item>
+    <item key="seda">SLZnecisteniPrachBarva.Seda</item>
+    <item key="bila">SLZnecisteniPrachBarva.Bila</item>
+    <item key="barevna">SLZnecisteniPrachBarva.Barevna</item>
+    <item key="jina">SLZnecisteniPrachBarva.Jina</item>
+  </list>
+  <list name="SLZnecisteniPrachStruktura" bundle="ServerBundle" alphabetize="false">
+    <item key="[null]">SL.NULL</item>
+    <item key="hladka">SLZnecisteniPrachStruktura.hladka</item>
+    <item key="droliva">SLZnecisteniPrachStruktura.droliva</item>
+    <item key="tvrda">SLZnecisteniPrachStruktura.tvrda</item>
+    <item key="vazka">SLZnecisteniPrachStruktura.vazka</item>
+    <item key="povlak">SLZnecisteniPrachStruktura.povlak</item>
+  </list>
 </lists>
